@@ -42,8 +42,8 @@ export default function Home() {
               We are redesigning our digital home
             </h2>
 
-            <p className="text-2xl md:text-3xl text-white/90 font-light mb-10">
-              We will be back online soon.
+            <p className="text-2xl text-white/90 font-light">
+              We will be back online soon!
             </p>
 
           </div>
