@@ -4,13 +4,25 @@ import { Icon } from "@iconify/react";
 import Header from "../layouts/header";
 import Timeline from "../components/Timeline";
 import TeamMembers from "@/components/TeamMembers";
+import Footer from "../layouts/footer";
+import ScrollToTop from "../components/ScrollToTop";
+import ContactModal from "../components/ContactModal";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const openContactModal = () => {
+    setIsContactModalOpen(true);
+  };
+
+  const closeContactModal = () => {
+    setIsContactModalOpen(false);
+  };
 
   if (!mounted) return null;
 
@@ -19,9 +31,12 @@ export default function Home() {
       {/* Header */}
       <Header />
 
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
+
       {/* Main content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <section className="bg-gesitech-blue/10 pt-32 pb-16">
+        <section id="home" className="bg-gesitech-blue/10 pt-32 pb-16">
           <div className="flex flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
             <div className="flex flex-col items-start justify-center">
               <h2 className="text-5xl font-bold text-gesitech-blue mb-8">
@@ -38,8 +53,11 @@ export default function Home() {
                 <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-4 rounded-xl text-lg cursor-pointer">
                   Explore Our Services
                 </button>
-                <button className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-4 rounded-xl text-lg cursor-pointer">
-                  Discover Our Products
+                <button 
+                  onClick={openContactModal}
+                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-4 rounded-xl text-lg cursor-pointer"
+                >
+                  Get Quote
                 </button>
               </div>
               <div className="flex flex-row items-center justify-start gap-4 mt-8">
@@ -79,7 +97,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-gesitech-green/10 pt-20 pb-20">
+        <section id="about" className="bg-gesitech-green/10 pt-20 pb-20">
           <div className="flex flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
             <div className="flex flex-row items-center justify-center w-1/2">
               <Image
@@ -140,7 +158,10 @@ export default function Home() {
                   <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-4 rounded-xl text-lg cursor-pointer">
                     Explore Our Services
                   </button>
-                  <button className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-4 rounded-xl text-lg cursor-pointer">
+                  <button 
+                  onClick={openContactModal}
+                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-4 rounded-xl text-lg cursor-pointer"
+                >
                     Contact Us Today
                   </button>
                 </div>
@@ -149,7 +170,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-gesitech-blue/10 pt-20 pb-20">
+        <section id="mission" className="bg-gesitech-blue/10 pt-20 pb-20">
           <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
@@ -336,7 +357,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-white pt-20 pb-20">
+        <section id="what-we-do" className="bg-white pt-20 pb-20">
           <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
@@ -422,7 +443,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-gesitech-blue/5 pt-20 pb-20">
+        <section id="growth-story" className="bg-gesitech-blue/5 pt-20 pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -446,7 +467,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-white pt-20 pb-20">
+        <section id="team" className="bg-white pt-20 pb-20">
           <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
@@ -472,7 +493,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-gesitech-blue/5 pt-20 pb-20">
+        <section id="certifications" className="bg-gesitech-blue/5 pt-20 pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -588,7 +609,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-white pt-20 pb-20">
+        <section id="partners" className="bg-white pt-20 pb-20">
           <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-start gap-2">
               <div className="flex flex-row items-center justify-start gap-4">
@@ -688,13 +709,14 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <div className="mt-16 text-center">
-          <p className="text-white/50 text-sm">
-            © {new Date().getFullYear()} Gesitech Solutions Africa. All rights
-            reserved.
-          </p>
-        </div>
+        <Footer />
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={closeContactModal} 
+      />
     </div>
   );
 }

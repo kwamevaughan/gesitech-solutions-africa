@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import dynamic from "next/dynamic";
+import Select from "react-select";
 
 // Dynamically import ReCAPTCHA with SSR disabled
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {
@@ -19,6 +20,82 @@ export default function ContactForm({
   setIsCustomBudget,
   handleRecaptcha,
 }) {
+  // Options for React Select dropdowns
+  const industryOptions = [
+    { value: "Manufacturing", label: "Manufacturing" },
+    { value: "Hospitality & Restaurants", label: "Hospitality & Restaurants" },
+    { value: "Industrial Processing", label: "Industrial Processing" },
+    { value: "Residential Complexes", label: "Residential Complexes" },
+    { value: "Commercial Buildings", label: "Commercial Buildings" },
+    { value: "Healthcare Facilities", label: "Healthcare Facilities" },
+    { value: "Educational Institutions", label: "Educational Institutions" },
+    { value: "Other", label: "Other" },
+  ];
+
+  const projectScaleOptions = [
+    { value: "Small Scale", label: "Small Scale (1-5 cylinders)" },
+    { value: "Medium Scale", label: "Medium Scale (6-20 cylinders)" },
+    { value: "Large Scale", label: "Large Scale (21-100 cylinders)" },
+    { value: "Industrial Scale", label: "Industrial Scale (100+ cylinders)" },
+    { value: "Plant Installation", label: "Complete Plant Installation" },
+  ];
+
+  const timelineOptions = [
+    { value: "Immediate", label: "Immediate (Within 1 month)" },
+    { value: "1-3 Months", label: "1-3 Months" },
+    { value: "3-6 Months", label: "3-6 Months" },
+    { value: "6+ Months", label: "6+ Months" },
+  ];
+
+  const budgetOptions = [
+    { value: "Under $5,000", label: "Under $5,000" },
+    { value: "$5,000 - $20,000", label: "$5,000 - $20,000" },
+    { value: "$20,000 - $50,000", label: "$20,000 - $50,000" },
+    { value: "$50,000 - $100,000", label: "$50,000 - $100,000" },
+    { value: "Over $100,000", label: "Over $100,000" },
+    { value: "Custom", label: "Custom Amount" },
+  ];
+
+  // Custom styles for React Select
+  const selectStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      padding: "8px 12px",
+      borderRadius: "12px",
+      border: state.isFocused ? "2px solid #3b82f6" : "2px solid #e5e7eb",
+      backgroundColor: "rgba(249, 250, 251, 0.5)",
+      boxShadow: "none",
+      "&:hover": {
+        border: "2px solid #d1d5db",
+      },
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      color: "#9ca3af",
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: "#374151",
+    }),
+    menu: (provided) => ({
+      ...provided,
+      borderRadius: "12px",
+      boxShadow:
+        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isSelected
+        ? "#3b82f6"
+        : state.isFocused
+        ? "#eff6ff"
+        : "white",
+      color: state.isSelected ? "white" : "#374151",
+      "&:hover": {
+        backgroundColor: state.isSelected ? "#3b82f6" : "#eff6ff",
+      },
+    }),
+  };
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
@@ -30,6 +107,18 @@ export default function ContactForm({
       }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSelectChange = (selectedOption, actionMeta) => {
+    const { name } = actionMeta;
+    const value = selectedOption ? selectedOption.value : "";
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // Handle custom budget toggle
+    if (name === "budget") {
+      setIsCustomBudget(value === "Custom");
     }
   };
 
@@ -135,22 +224,18 @@ export default function ContactForm({
             >
               Industry *
             </label>
-            <select
-              id="industry"
+            <Select
               name="industry"
-              value={formData.industry}
-              onChange={handleChange}
+              options={industryOptions}
+              value={industryOptions.find(
+                (option) => option.value === formData.industry
+              )}
+              onChange={handleSelectChange}
+              placeholder="Select your industry"
+              isSearchable
+              styles={selectStyles}
               required
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-0 transition-colors duration-200 bg-gray-50/50"
-            >
-              <option value="">Select your industry</option>
-              <option value="Telecommunications">Telecommunications</option>
-              <option value="Financial Services">Financial Services</option>
-              <option value="Healthcare">Healthcare</option>
-              <option value="E-commerce">E-commerce</option>
-              <option value="Travel & Hospitality">Travel & Hospitality</option>
-              <option value="Other">Other</option>
-            </select>
+            />
           </div>
 
           <div className="space-y-2">
@@ -158,22 +243,20 @@ export default function ContactForm({
               htmlFor="teamSize"
               className="block text-sm font-semibold text-gray-700"
             >
-              Team Size *
+              Project Scale *
             </label>
-            <select
-              id="teamSize"
+            <Select
               name="teamSize"
-              value={formData.teamSize}
-              onChange={handleChange}
+              options={projectScaleOptions}
+              value={projectScaleOptions.find(
+                (option) => option.value === formData.teamSize
+              )}
+              onChange={handleSelectChange}
+              placeholder="Select project scale"
+              isSearchable
+              styles={selectStyles}
               required
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-0 transition-colors duration-200 bg-gray-50/50"
-            >
-              <option value="">Select team size</option>
-              <option value="1-10">1-10 agents</option>
-              <option value="11-50">11-50 agents</option>
-              <option value="51-100">51-100 agents</option>
-              <option value="100+">100+ agents</option>
-            </select>
+            />
           </div>
         </div>
       </div>
@@ -186,11 +269,12 @@ export default function ContactForm({
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { name: "Technology Solutions", icon: "lucide:zap" },
-            { name: "Advisory Services", icon: "lucide:target" },
-            { name: "Equipment Setup", icon: "ic:baseline-build" },
-            { name: "Cloud Platforms", icon: "lucide:cloud" },
-            { name: "AI & Analytics", icon: "lucide:brain" },
+            { name: "LPG Accessories Supply", icon: "lucide:package" },
+            { name: "Plant Installation", icon: "lucide:building" },
+            { name: "Maintenance Services", icon: "lucide:wrench" },
+            { name: "Safety Inspections", icon: "lucide:shield-check" },
+            { name: "Compliance Audits", icon: "lucide:clipboard-check" },
+            { name: "Staff Training", icon: "lucide:graduation-cap" },
           ].map((service) => (
             <label
               key={service.name}
@@ -248,7 +332,7 @@ export default function ContactForm({
             onChange={handleChange}
             required
             rows={4}
-            placeholder="Tell us about your current challenges - scaling operations, technology integration, compliance issues, etc."
+            placeholder="Tell us about your LPG needs - new installation, maintenance issues, safety concerns, compliance requirements, etc."
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-0 transition-colors duration-200 bg-gray-50/50 resize-none"
           />
         </div>
@@ -261,56 +345,18 @@ export default function ContactForm({
             >
               Project Timeline *
             </label>
-            <select
-              id="timeline"
+            <Select
               name="timeline"
-              value={formData.timeline}
-              onChange={handleChange}
+              options={timelineOptions}
+              value={timelineOptions.find(
+                (option) => option.value === formData.timeline
+              )}
+              onChange={handleSelectChange}
+              placeholder="Select timeline"
+              isSearchable
+              styles={selectStyles}
               required
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-0 transition-colors duration-200 bg-gray-50/50"
-            >
-              <option value="">Select timeline</option>
-              <option value="Immediate">
-                <div className="flex items-center">
-                  <Icon
-                    icon="lucide:rocket"
-                    className="mr-2"
-                    style={{ color: "#f45b01" }}
-                  />
-                  Immediate (Within 1 month)
-                </div>
-              </option>
-              <option value="1-3 Months">
-                <div className="flex items-center">
-                  <Icon
-                    icon="lucide:clock"
-                    className="mr-2"
-                    style={{ color: "#f45b01" }}
-                  />
-                  1-3 Months
-                </div>
-              </option>
-              <option value="3-6 Months">
-                <div className="flex items-center">
-                  <Icon
-                    icon="lucide:calendar"
-                    className="mr-2"
-                    style={{ color: "#f45b01" }}
-                  />
-                  3-6 Months
-                </div>
-              </option>
-              <option value="6+ Months">
-                <div className="flex items-center">
-                  <Icon
-                    icon="lucide:calendar-check"
-                    className="mr-2"
-                    style={{ color: "#f45b01" }}
-                  />
-                  6+ Months
-                </div>
-              </option>
-            </select>
+            />
           </div>
 
           <div className="space-y-2">
@@ -320,69 +366,18 @@ export default function ContactForm({
             >
               Budget Range *
             </label>
-            <select
-              id="budget"
+            <Select
               name="budget"
-              value={formData.budget}
-              onChange={(e) => {
-                handleChange(e);
-                setIsCustomBudget(e.target.value === "Custom");
-              }}
+              options={budgetOptions}
+              value={budgetOptions.find(
+                (option) => option.value === formData.budget
+              )}
+              onChange={handleSelectChange}
+              placeholder="Select budget range"
+              isSearchable
+              styles={selectStyles}
               required
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-0 transition-colors duration-200 bg-gray-50/50"
-            >
-              <option value="">Select budget range</option>
-              <option value="Under $10,000">
-                <div className="flex items-center">
-                  <Icon
-                    icon="lucide:dollar-sign"
-                    className="mr-2"
-                    style={{ color: "#ffd100" }}
-                  />
-                  Under $10,000
-                </div>
-              </option>
-              <option value="$10,000 - $50,000">
-                <div className="flex items-center">
-                  <Icon
-                    icon="lucide:briefcase"
-                    className="mr-2"
-                    style={{ color: "#ffd100" }}
-                  />
-                  $10,000 - $50,000
-                </div>
-              </option>
-              <option value="$50,000 - $100,000">
-                <div className="flex items-center">
-                  <Icon
-                    icon="lucide:building"
-                    className="mr-2"
-                    style={{ color: "#ffd100" }}
-                  />
-                  $50,000 - $100,000
-                </div>
-              </option>
-              <option value="Over $100,000">
-                <div className="flex items-center">
-                  <Icon
-                    icon="lucide:trophy"
-                    className="mr-2"
-                    style={{ color: "#ffd100" }}
-                  />
-                  Over $100,000
-                </div>
-              </option>
-              <option value="Custom">
-                <div className="flex items-center">
-                  <Icon
-                    icon="lucide:edit"
-                    className="mr-2"
-                    style={{ color: "#ffd100" }}
-                  />
-                  Custom Amount
-                </div>
-              </option>
-            </select>
+            />
           </div>
         </div>
 
@@ -405,6 +400,24 @@ export default function ContactForm({
             />
           </div>
         )}
+
+        <div className="space-y-2">
+          <label
+            htmlFor="additionalInfo"
+            className="block text-sm font-semibold text-gray-700"
+          >
+            Additional Information
+          </label>
+          <textarea
+            id="additionalInfo"
+            name="additionalInfo"
+            value={formData.additionalInfo}
+            onChange={handleChange}
+            rows={3}
+            placeholder="Any additional details about your LPG requirements..."
+            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-0 transition-colors duration-200 bg-gray-50/50 resize-none"
+          />
+        </div>
       </div>
 
       {/* reCAPTCHA and Submit */}
@@ -427,7 +440,7 @@ export default function ContactForm({
           <button
             type="submit"
             disabled={loading}
-            className="group relative px-8 py-4 bg-gradient-to-r from-[#0088d2] to-[#4db7f0] text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="group relative px-8 py-4 bg-gradient-to-r from-gesitech-blue to-gesitech-green text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             <span className="relative z-10 flex items-center">
               {loading ? (

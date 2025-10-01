@@ -115,7 +115,7 @@ const TeamMembers = () => {
         title={
           selectedMember ? (
             <>
-              {selectedMember.name}, <span className="text-gesitech-green">{selectedMember.title}</span>
+              {selectedMember.name}, {selectedMember.title}
             </>
           ) : "Team Member"
         }

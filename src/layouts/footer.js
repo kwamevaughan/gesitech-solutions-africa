@@ -3,196 +3,138 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { useState, useEffect, useRef } from "react";
 
 const Footer = () => {
-  const footerRef = useRef(null);
-  const [isFooterVisible, setIsFooterVisible] = useState(false);
-
-  // Check if the footer is in view
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1, // When 10% of the footer is visible
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsFooterVisible(true);
-        } else {
-          setIsFooterVisible(false);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
-
-    if (footerRef.current) {
-      observer.observe(footerRef.current);
-    }
-
-    return () => {
-      if (footerRef.current) {
-        observer.unobserve(footerRef.current);
-      }
-    };
-  }, []);
-
   const currentYear = new Date().getFullYear();
 
   return (
-    <section className="footer-bg bg-white pt-2 pb-10 relative">
-      {/* Overlay div */}
-      <div className="absolute inset-0 bg-[#EAEAEA]/95 z-0 pointer-events-none"></div>
-
-      <div className="relative z-10">
-        {/* Content Container */}
-        <section className="relative z-10 max-w-6xl mx-auto px-3 sm:px-0 grid grid-cols-1 sm:grid-cols-2 gap-8 mt-20 pb-10 ">
-          <div className="flex flex-col gap-8 items-center sm:items-start">
-            <div className="flex-shrink-0">
+    <footer className="bg-gesitech-gray text-white py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Section */}
+          <div className="space-y-6">
+            {/* Logo */}
+            <div className="bg-white rounded-2xl px-4 py-2 inline-block">
               <Link href="/" passHref>
                 <Image
-                  src="/assets/images/logo.svg"
-                  alt="Logo"
-                  width={200}
-                  height={70}
-                  className="rounded-xl"
+                  src="/assets/images/logo.png"
+                  alt="Gesitech Solutions Africa"
+                  width={240}
+                  height={240}
+                  className="h-20 w-auto"
                 />
               </Link>
             </div>
-            <h2 className="text-3xl text-center sm:text-left">
-              Where Innovation Meets Impact.
-            </h2>
-          </div>
-        </section>
-      </div>
 
-      {/* Footer Bottom Section */}
-      <div
-        ref={footerRef}
-        className={`relative z-10 flex flex-col sm:flex-row gap-2 items-center sm:items-start justify-between max-w-6xl mx-auto px-3 sm:px-0 ${isFooterVisible ? "footer-visible" : "footer-slide-in"}`}
-      >
-        <div className="flex flex-col gap-8 items-center sm:items-start pb-4">
-          <p className="text-sm">
-            © {currentYear} |{" "}
-            <Link href="/privacy-policy" className="hover:text-[#ED761E]">
-              Privacy Policy | Terms of Service
-            </Link>
-          </p>
-          <div className="flex gap-4 ">
-            <Image
-              src="/assets/images/omni-channel.svg"
-              width={150}
-              height={0}
-              alt="Omni Channel"
-              className="rounded-md transform transition-transform duration-300 hover:translate-y-[-5px]"
-            />
+            {/* Main Heading */}
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-light leading-tight mb-2">
+                Let&apos;s Power Africa Together
+              </h2>
+              <p className="text-gray-300 text-md">
+                Talk to our team about safe, reliable LPG solutions.
+              </p>
+            </div>
 
-            <Image
-              src="/assets/images/ai-powered.svg"
-              width={150}
-              height={0}
-              alt="AI powered"
-              className="rounded-md transform transition-transform duration-300 hover:translate-y-[-5px]"
-            />
-          </div>
-        </div>
-
-        <div>
-          <ul className="flex gap-2">
-            <li className="group flex items-start gap-2 pb-4 hover:translate-y-[-4px] transition-transform duration-300">
-              <a
-                href="https://www.facebook.com/callcentersolutionsafrica"
+            {/* Social Media Icons */}
+            <div className="flex gap-3">
+              <Link
+                href="https://www.instagram.com/gesitech_solutions/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-600 group-hover:text-[#1877F2]"
-              >
-                <Icon
-                  icon="ic:baseline-facebook"
-                  width="32"
-                  height="32"
-                  className="flex-shrink-0"
-                />
-                <span className="sr-only">Facebook</span>
-              </a>
-            </li>
-
-            <li className="group flex items-start gap-2 pb-4 hover:translate-y-[-4px] transition-transform duration-300">
-              <a
-                href="https://www.linkedin.com/company/call-center-solutions-africa/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-600 group-hover:text-[#0077B5]"
-              >
-                <Icon
-                  icon="mdi:linkedin"
-                  width="32"
-                  height="32"
-                  className="flex-shrink-0"
-                />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-            </li>
-
-            <li className="group flex items-start gap-2 pb-4 hover:translate-y-[-4px] transition-transform duration-300">
-              <a
-                href="https://www.youtube.com/@CallCenterSolutionsAfrica"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-600 group-hover:text-[#FF0000]"
-              >
-                <Icon
-                  icon="mdi:youtube"
-                  width="32"
-                  height="32"
-                  className="flex-shrink-0"
-                />
-                <span className="sr-only">YouTube</span>
-              </a>
-            </li>
-
-            <li className="group flex items-start gap-2 pb-4 hover:translate-y-[-4px] transition-transform duration-300">
-              <a
-                href="https://www.instagram.com/call_center_solutions/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-600 group-hover:text-[#E1306C]"
+                className="rounded-lg flex items-center justify-center transition-colors duration-300"
               >
                 <Icon
                   icon="mdi:instagram"
-                  width="32"
-                  height="32"
-                  className="flex-shrink-0"
+                  className="w-8 h-8 text-gesitech-green hover:text-white transition-all duration-300"
                 />
-                <span className="sr-only">Instagram</span>
-              </a>
-            </li>
-
-            <li className="group flex items-start gap-2 pb-4 hover:translate-y-[-4px] transition-transform duration-300">
-              <a
-                href="https://x.com/Callcentersols"
+              </Link>
+              <Link
+                href="https://www.facebook.com/gesitechsolutions"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-600 group-hover:text-[#000000]"
+                className="rounded-lg flex items-center justify-center transition-colors duration-300"
               >
                 <Icon
-                  icon="line-md:twitter-x"
-                  width="32"
-                  height="32"
-                  className="flex-shrink-0"
+                  icon="uil:facebook"
+                  className="w-8 h-8 text-gesitech-green hover:text-white transition-all duration-300"
                 />
-                <span className="sr-only">X (Twitter)</span>
-              </a>
-            </li>
-          </ul>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/gesitech-solutions-africa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg flex items-center justify-center transition-colors duration-300"
+              >
+                <Icon
+                  icon="mdi:linkedin"
+                  className="w-8 h-8 text-gesitech-green hover:text-white transition-all duration-300"
+                />
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Section - Contact Info */}
+          <div className="space-y-6 lg:ml-auto lg:max-w-md">
+            {/* Email */}
+            <div>
+              <h3 className="text-gesitech-green text-lg font-semibold mb-2">
+                Email
+              </h3>
+              <Link
+                href="mailto:info@gesitech.africa"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+              >
+                info@gesitech.africa
+              </Link>
+            </div>
+
+            {/* Office */}
+            <div>
+              <h3 className="text-gesitech-green text-lg font-semibold mb-2">
+                Office
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                7th floor, Mitsumi Business Park,
+                <br />
+                Muthithi Road, Westlands, Nairobi
+              </p>
+            </div>
+
+            {/* Address */}
+            <div>
+              <h3 className="text-gesitech-green text-lg font-semibold mb-2">
+                Address
+              </h3>
+              <p className="text-gray-300">P.O. Box 856-00100, Kenya</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-400 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-200 text-sm">
+              © {currentYear} Gesitech Solutions Africa
+            </p>
+            <div className="flex gap-6">
+              <Link
+                href="/terms"
+                className="text-gray-200 hover:text-white text-sm transition-colors duration-300"
+              >
+                Terms & Conditions
+              </Link>
+              <Link
+                href="/privacy"
+                className="text-gray-200 hover:text-white text-sm transition-colors duration-300"
+              >
+                Privacy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 

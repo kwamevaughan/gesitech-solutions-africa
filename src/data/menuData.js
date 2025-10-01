@@ -1,10 +1,11 @@
 // data/menuData.js
 export const menuItems = [
-  { href: "#home", label: "Home", isAnchor: false },
-  { href: "#about-us", label: "About", isAnchor: false },
-  { href: "#services", label: "Services", isAnchor: false },
-  { href: "#journey", label: "Journey", isAnchor: false },
-  { href: "#leadership", label: "Leadership", isAnchor: false },
-  { href: "#certifications", label: "Certifications", isAnchor: false },
-  { href: "#parners", label: "Partners", isAnchor: false }
+  { href: "#home", label: "Home", isAnchor: true },
+  { href: "#about", label: "About", isAnchor: true },
+  { href: "#mission", label: "Mission", isAnchor: true },
+  { href: "#what-we-do", label: "What We Do", isAnchor: true },
+  { href: "#growth-story", label: "Growth Story", isAnchor: true },
+  { href: "#team", label: "Team", isAnchor: true },
+  { href: "#certifications", label: "Certifications", isAnchor: true },
+  { href: "#partners", label: "Partners", isAnchor: true }
 ];

@@ -109,7 +109,7 @@ const SimpleModal = ({
 
   const modalContent = (
     <div
-      className={`fixed inset-0 z-10 flex items-center justify-center p-4 transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center p-4 transition-opacity duration-300 ${
         isAnimating ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
       onClick={(e) => e.stopPropagation()}
@@ -157,8 +157,8 @@ const SimpleModal = ({
         <div
           className={`relative px-8 py-4 overflow-hidden rounded-t-3xl ${
             mode === "dark"
-              ? "bg-gradient-to-r from-richBlue to-richBlue/80"
-              : "bg-gradient-to-r from-richBlueLight to-richBlue"
+              ? "bg-gradient-to-r from-gesitech-blue to-gesitech-blue/80"
+              : "bg-gradient-to-r from-gesitech-green to-gesitech-blue"
           }`}
           style={{
             backdropFilter: "blur(8px)",
@@ -173,7 +173,7 @@ const SimpleModal = ({
           </div>
 
           <div className="relative flex justify-between items-center">
-            <h2 className="text-2xl font-semibold text-gesitech-blue tracking-tight">
+            <h2 className="text-2xl font-semibold text-white tracking-tight">
               {title}
             </h2>
             <div className="flex items-center gap-4">

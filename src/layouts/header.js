@@ -5,10 +5,21 @@ import Link from "next/link";
 import { useState } from "react";
 import { menuItems } from "../data/menuData";
 import { useFixedHeader, handleScroll } from "../utils/scrollUtils";
+import ContactModal from "../components/ContactModal";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const isFixed = useFixedHeader();
+
+  const openContactModal = () => {
+    setIsContactModalOpen(true);
+    setIsMenuOpen(false); // Close mobile menu if open
+  };
+
+  const closeContactModal = () => {
+    setIsContactModalOpen(false);
+  };
 
   return (
     <div
@@ -96,12 +107,12 @@ function Header() {
 
           {/* Contact Button - Right Side */}
           <div className="hidden md:flex flex-shrink-0">
-            <Link
-              href="/contact"
-              className="bg-gradient-to-r from-gesitech-blue to-gesitech-green text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+            <button
+              onClick={openContactModal}
+              className="bg-gradient-to-r from-gesitech-blue to-gesitech-green text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               Contact
-            </Link>
+            </button>
           </div>
         </nav>
 
@@ -129,7 +140,7 @@ function Header() {
                   key={`mobile-${item.href}`}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block px-4 py-2 text-gray-900 hover:bg-gesitech-green hover:text-blue-400 font-bold rounded-full transition-all duration-300"
+                  className="block px-4 py-2 text-gray-900 hover:bg-gesitech-green hover:text-blue-400 font-bold rounded-full transition-all duration-300 "
                 >
                   {item.label}
                 </Link>
@@ -137,16 +148,21 @@ function Header() {
             )}
 
             {/* Mobile Contact Button */}
-            <Link
-              href="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="block bg-gradient-to-r from-gesitech-blue to-gesitech-green text-white px-6 py-3 rounded-full font-bold text-center mt-2 hover:shadow-lg transition-all duration-300"
+            <button
+              onClick={openContactModal}
+              className="block w-full bg-gradient-to-r from-gesitech-blue to-gesitech-green text-white px-6 py-3 rounded-full font-bold text-center mt-2 hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               Contact
-            </Link>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={closeContactModal} 
+      />
     </div>
   );
 }
