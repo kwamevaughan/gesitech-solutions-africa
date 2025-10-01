@@ -36,81 +36,81 @@ export default function Home() {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <section id="home" className="bg-gesitech-blue/10 pt-32 pb-16">
-          <div className="flex flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
-            <div className="flex flex-col items-start justify-center">
-              <h2 className="text-5xl font-bold text-gesitech-blue mb-8">
+        <section id="home" className="bg-gesitech-blue/10 pt-32 pb-16 px-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
+            <div className="flex flex-col items-start justify-center lg:w-1/2">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gesitech-blue mb-6 lg:mb-8 text-center lg:text-left">
                 Powering Africa with Safe, Reliable, and Sustainable LPG
                 Solutions
               </h2>
-              <p className="text-gray-500 text-lg">
+              <p className="text-gray-500 text-base lg:text-lg text-center lg:text-left">
                 Trusted since 2017, Gesitech Solutions Africa delivers
                 world-class LPG accessories, plant installations, and
                 maintenance services that drive growth, protect communities, and
                 support a cleaner energy future.
               </p>
-              <div className="flex flex-row items-center justify-start gap-4 mt-8">
-                <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-2 rounded-xl text-lg cursor-pointer">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6 lg:mt-8 w-full">
+                <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto">
                   Explore Our Services
                 </button>
                 <button 
                   onClick={openContactModal}
-                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-2 rounded-xl text-lg cursor-pointer"
+                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto"
                 >
                   Get Quote
                 </button>
               </div>
-              <div className="flex flex-row items-center justify-start gap-4 mt-8">
-                <span className="text-gesitech-gray font-semibold flex items-center gap-2 text-md">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4 mt-6 lg:mt-8">
+                <span className="text-gesitech-gray font-semibold flex items-center gap-2 text-sm lg:text-md">
                   <Icon
                     icon="mdi:circle"
-                    className="text-gesitech-green text-2xl"
+                    className="text-gesitech-green text-xl lg:text-2xl"
                   />
                   EPRA & ISO Certified
                 </span>
-                <span className="text-gesitech-gray font-semibold flex items-center gap-2 text-md">
+                <span className="text-gesitech-gray font-semibold flex items-center gap-2 text-sm lg:text-md">
                   <Icon
                     icon="mdi:circle"
-                    className="text-gesitech-green text-2xl"
+                    className="text-gesitech-green text-xl lg:text-2xl"
                   />
                   Turnkey Delivery
                 </span>
-                <span className="text-gesitech-gray font-semibold flex items-center gap-2 text-md">
+                <span className="text-gesitech-gray font-semibold flex items-center gap-2 text-sm lg:text-md">
                   <Icon
                     icon="mdi:circle"
-                    className="text-gesitech-green text-2xl"
+                    className="text-gesitech-green text-xl lg:text-2xl"
                   />
                   Trusted Since 2017
                 </span>
               </div>
             </div>
 
-            <div className="flex flex-row items-center justify-center">
+            <div className="flex flex-row items-center justify-center lg:w-1/2 mt-8 lg:mt-0">
               <Image
                 src="/assets/images/header-img.png"
                 alt="Gesitech Solutions Africa"
                 width={1000}
                 height={100}
-                className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl"
+                className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl w-full max-w-lg"
               />
             </div>
           </div>
         </section>
 
-        <section id="about" className="bg-gesitech-green/10 pt-20 pb-20">
-          <div className="flex flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
-            <div className="flex flex-row items-center justify-center w-1/2">
+        <section id="about" className="bg-gesitech-green/10 pt-20 pb-20 px-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
+            <div className="flex flex-row items-center justify-center lg:w-1/2 order-2 lg:order-1">
               <Image
                 src="/assets/images/whoweare.png"
                 alt="Gesitech Solutions Africa"
                 width={1000}
                 height={100}
-                className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl"
+                className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl w-full max-w-lg"
               />
             </div>
 
-            <div className="flex flex-col items-start justify-center w-1/2">
-              <div className="flex flex-row items-center justify-start gap-4 mb-8">
+            <div className="flex flex-col items-start justify-center lg:w-1/2 order-1 lg:order-2">
+              <div className="flex flex-row items-center justify-center lg:justify-start gap-4 mb-6 lg:mb-8">
                 <Image
                   src="/assets/images/leaf.svg"
                   alt="Who we are"
@@ -118,11 +118,11 @@ export default function Home() {
                   height={0}
                   className="transition-all duration-300"
                 />
-                <h2 className="text-4xl font-bold text-gesitech-blue">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gesitech-blue text-center lg:text-left">
                   Who We Are
                 </h2>
               </div>
-              <p className="text-gray-500 text-lg">
+              <p className="text-gray-500 text-base lg:text-lg text-center lg:text-left">
                 Since 2017, Gesitech Solutions Africa has been at the forefront
                 of safe, reliable, and sustainable LPG solutions. We partner
                 with businesses, industries, and communities to deliver
@@ -132,35 +132,35 @@ export default function Home() {
                 project exceeds expectations and complies with international
                 standards.
               </p>
-              <div className="flex flex-col items-start justify-start gap-4 mt-8">
-                <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-md">
+              <div className="flex flex-col items-center lg:items-start justify-start gap-4 mt-6 lg:mt-8">
+                <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-sm lg:text-md text-center lg:text-left">
                   <Icon
                     icon="material-symbols:check"
-                    className="text-white text-3xl bg-gesitech-green rounded-full p-1"
+                    className="text-white text-2xl lg:text-3xl bg-gesitech-green rounded-full p-1 flex-shrink-0"
                   />
                   Trusted partner across Africa since 2017
                 </span>
-                <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-md">
+                <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-sm lg:text-md text-center lg:text-left">
                   <Icon
                     icon="material-symbols:check"
-                    className="text-white text-3xl bg-gesitech-green rounded-full p-1"
+                    className="text-white text-2xl lg:text-3xl bg-gesitech-green rounded-full p-1 flex-shrink-0"
                   />
                   End-to-end LPG supply, installation & maintenance
                 </span>
-                <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-md">
+                <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-sm lg:text-md text-center lg:text-left">
                   <Icon
                     icon="material-symbols:check"
-                    className="text-white text-3xl bg-gesitech-green rounded-full p-1"
+                    className="text-white text-2xl lg:text-3xl bg-gesitech-green rounded-full p-1 flex-shrink-0"
                   />
                   Committed to sustainability and compliance
                 </span>
-                <div className="flex flex-row items-center justify-start gap-4 mt-8">
-                  <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-3 rounded-xl text-lg cursor-pointer">
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6 lg:mt-8 w-full">
+                  <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto">
                     Explore Our Services
                   </button>
                   <button 
                   onClick={openContactModal}
-                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-3 rounded-xl text-lg cursor-pointer"
+                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto"
                 >
                     Contact Us Today
                   </button>
@@ -246,7 +246,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-gesitech-blue pt-20 pb-20">
+        <section className="bg-gesitech-blue pt-20 pb-20 px-4">
           <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
@@ -259,18 +259,18 @@ export default function Home() {
                     <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
                   </svg>
                 </div>
-                <h2 className="text-4xl text-white font-bold">
+                <h2 className="text-3xl lg:text-4xl text-white font-bold text-center">
                   Our Core Values
                 </h2>
               </div>
-              <p className="text-lg text-white">
+              <p className="text-base lg:text-lg text-white text-center">
                 The principles that guide our work and partnerships.
               </p>
             </div>
             <div className="flex flex-row items-center justify-between gap-10">
               <div className="flex flex-col items-start justify-center">
                 <div className="flex flex-col items-center justify-start gap-4 mt-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 w-full">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 w-full">
                     <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 p-6 rounded-xl h-full">
                       <Image
                         src="/assets/images/safety.svg"
@@ -357,7 +357,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="what-we-do" className="bg-white pt-20 pb-20">
+        <section id="what-we-do" className="bg-white pt-20 pb-20 px-4">
           <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
@@ -370,11 +370,11 @@ export default function Home() {
                     className="transition-all duration-300"
                   />
                 </div>
-                <h2 className="text-4xl text-gesitech-blue font-bold">
+                <h2 className="text-3xl lg:text-4xl text-gesitech-blue font-bold text-center">
                   What We Do
                 </h2>
               </div>
-              <p className="text-lg text-gray-500">
+              <p className="text-base lg:text-lg text-gray-500 text-center">
                 End-to-end LPG solutions combining safety, reliability, and
                 innovation.
               </p>
@@ -467,7 +467,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="team" className="bg-white pt-20 pb-20">
+        <section id="team" className="bg-white pt-20 pb-20 px-4">
           <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
@@ -480,7 +480,7 @@ export default function Home() {
                     className="transition-all duration-300"
                   />
                 </div>
-                <h2 className="text-4xl text-gesitech-blue font-bold">
+                <h2 className="text-3xl lg:text-4xl text-gesitech-blue font-bold text-center">
                   Our Leadership Team
                 </h2>
               </div>
@@ -609,7 +609,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="partners" className="bg-white pt-20 pb-20">
+        <section id="partners" className="bg-white pt-20 pb-20 px-4">
           <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-start gap-2">
               <div className="flex flex-row items-center justify-start gap-4">
@@ -622,18 +622,18 @@ export default function Home() {
                     className="transition-all duration-300"
                   />
                 </div>
-                <h2 className="text-4xl text-gesitech-blue font-bold">
+                <h2 className="text-3xl lg:text-4xl text-gesitech-blue font-bold text-center">
                   Our Partners
                 </h2>
               </div>
-              <p className="text-lg text-gesitech-blue">
+              <p className="text-base lg:text-lg text-gesitech-blue text-center">
                 Strong partnerships that power sustainable growth.
               </p>
             </div>
             <div className="flex flex-row items-center justify-between gap-10">
               <div className="flex flex-col items-start justify-center">
                 <div className="flex flex-col items-center justify-start gap-4 mt-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
                     <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-blue hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-10 rounded-xl h-full">
                       <Image
                         src="/assets/images/global-manu.png"
