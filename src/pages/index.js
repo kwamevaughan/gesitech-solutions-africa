@@ -77,7 +77,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-gesitech-green/10 pt-32 pb-16">
+        <section className="bg-gesitech-green/10 pt-20 pb-20">
           <div className="flex flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
             <div className="flex flex-row items-center justify-center w-1/2">
               <Image
