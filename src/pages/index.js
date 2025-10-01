@@ -94,7 +94,7 @@ export default function Home() {
                 <Image
                   src="/assets/images/leaf.svg"
                   alt="Who we are"
-                  width={40}
+                  width={30}
                   height={0}
                   className="transition-all duration-300"
                 />
@@ -142,6 +142,82 @@ export default function Home() {
                     Contact Us Today
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-gesitech-blue/10 pt-20 pb-20">
+          <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
+            <div className="flex flex-col items-center justify-start gap-2 mb-6">
+              <div className="flex flex-row items-center justify-start gap-4">
+                <Image
+                  src="/assets/images/leaf.svg"
+                  alt="Who we are"
+                  width={30}
+                  height={0}
+                  className="transition-all duration-300"
+                />
+                <h2 className="text-4xl font-bold text-gesitech-blue">
+                  Our Mission & Vision
+                </h2>
+              </div>
+              <p className="text-gray-500 text-lg">
+                End-to-end LPG solutions combining safety, reliability, and
+                innovation.
+              </p>
+            </div>
+            <div className="flex flex-row items-center justify-between gap-10">
+              <div className="flex flex-col items-start justify-center">
+                <div className="flex flex-col items-center justify-start gap-4 mt-8">
+                  <div className="flex flex-row items-center justify-start gap-4 bg-white hover:skew-y-1 hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl">
+                    <Image
+                      src="/assets/images/mission.png"
+                      alt="Mission"
+                      width={100}
+                      height={100}
+                      className="transition-all duration-300"
+                    />
+                    <div className="flex flex-col items-start justify-start gap-2">
+                      <h3 className="text-2xl font-bold text-gesitech-green">
+                        Mission
+                      </h3>
+                      <p className="text-gray-500 text-lg">
+                        To deliver reliable LPG accessories, installation, and
+                        maintenance services that drive energy access, safety,
+                        and sustainability.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-row items-center justify-start gap-4 bg-white hover:skew-y-1 hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl">
+                    <Image
+                      src="/assets/images/vision.png"
+                      alt="Vision"
+                      width={100}
+                      height={100}
+                      className="transition-all duration-300"
+                    />
+                    <div className="flex flex-col items-start justify-start gap-2">
+                      <h3 className="text-2xl font-bold text-gesitech-green">
+                        Vision
+                      </h3>
+                      <p className="text-gray-500 text-lg">
+                        To be Africa’s trusted partner in safe, efficient, and
+                        sustainable LPG solutions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-row items-center justify-center">
+                <Image
+                  src="/assets/images/mission-vision.png"
+                  alt="Mission and Vision"
+                  width={700}
+                  height={0}
+                  className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl"
+                />
               </div>
             </div>
           </div>
