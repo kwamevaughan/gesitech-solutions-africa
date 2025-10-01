@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Icon } from "@iconify/react";
 import Header from "../layouts/header";
 import Timeline from "../components/Timeline";
+import TeamMembers from "@/components/TeamMembers";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -442,6 +443,32 @@ export default function Home() {
             </div>
 
             <Timeline />
+          </div>
+        </section>
+
+        <section className="bg-white pt-20 pb-20">
+          <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
+            <div className="flex flex-col items-center justify-start gap-2 mb-6">
+              <div className="flex flex-row items-center justify-start gap-4">
+                <div className="">
+                  <Image
+                    src="/assets/images/leaf.svg"
+                    alt="What we do"
+                    width={30}
+                    height={0}
+                    className="transition-all duration-300"
+                  />
+                </div>
+                <h2 className="text-4xl text-gesitech-blue font-bold">
+                  Our Leadership Team
+                </h2>
+              </div>
+              <p className="text-lg text-gray-500">
+                Experienced, visionary, and committed to Africa’s energy future.
+              </p>
+            </div>
+
+            <TeamMembers />
           </div>
         </section>
 
