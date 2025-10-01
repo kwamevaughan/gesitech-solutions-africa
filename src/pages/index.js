@@ -7,6 +7,7 @@ import TeamMembers from "@/components/TeamMembers";
 import Footer from "../layouts/footer";
 import ScrollToTop from "../components/ScrollToTop";
 import ContactModal from "../components/ContactModal";
+import Link from "next/link";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -50,10 +51,12 @@ export default function Home() {
                 support a cleaner energy future.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6 lg:mt-8 w-full">
-                <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto">
-                  Explore Our Services
-                </button>
-                <button 
+                <Link href="#what-we-do">
+                  <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto">
+                    Explore Our Services
+                  </button>
+                </Link>
+                <button
                   onClick={openContactModal}
                   className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto"
                 >
@@ -155,13 +158,15 @@ export default function Home() {
                   Committed to sustainability and compliance
                 </span>
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6 lg:mt-8 w-full">
+                  <Link href="#what-we-do">
                   <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto">
                     Explore Our Services
                   </button>
-                  <button 
-                  onClick={openContactModal}
-                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto"
-                >
+                  </Link>
+                  <button
+                    onClick={openContactModal}
+                    className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto"
+                  >
                     Contact Us Today
                   </button>
                 </div>
@@ -713,10 +718,7 @@ export default function Home() {
       </div>
 
       {/* Contact Modal */}
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={closeContactModal} 
-      />
+      <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
     </div>
   );
 }
