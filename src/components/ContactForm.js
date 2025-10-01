@@ -461,7 +461,7 @@ export default function ContactForm({
                 </>
               )}
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-[#4db7f0] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-gesitech-blue to-gesitech-green rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
           </button>
         </div>
       </div>
