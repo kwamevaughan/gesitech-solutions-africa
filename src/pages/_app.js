@@ -1,19 +1,19 @@
 import "../styles/globals.css";
-import { Poppins } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 
-const poppins = Poppins({
+const dmSans = DM_Sans({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-poppins",
+  variable: "--font-dm-sans",
 });
 
 function MyApp({ Component, pageProps }) {
 
   return (
     <div
-      className={poppins.variable}
-      style={{ fontFamily: 'var(--font-poppins), system-ui, sans-serif' }}
+      className={dmSans.variable}
+      style={{ fontFamily: 'var(--font-dm-sans), system-ui, sans-serif' }}
     >
       
       <Component

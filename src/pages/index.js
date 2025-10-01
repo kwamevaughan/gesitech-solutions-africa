@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import Header from "../layouts/header";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -12,118 +13,145 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-green-900 relative overflow-hidden">
-      {/* Subtle background overlay */}
-      <div className="absolute inset-0 bg-black/20"></div>
+    <div className="min-h-screen relative overflow-hidden mx-auto">
+      {/* Header */}
+      <Header />
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8 text-center">
-        {/* Logo Section */}
-        <div className="mb-12 transform hover:scale-105 transition-transform duration-300">
-          <div className="bg-white backdrop-blur-lg rounded-lg px-4 py-2 border border-white/20 shadow-2xl">
-            <Image src="/assets/images/logo.png" alt="logo" width={200} height={38} />
-          </div>
-        </div>
-
-        {/* Main Message Card */}
-        <div className="max-w-4xl mb-12 transform hover:scale-[1.02] transition-all duration-300">
-          <div className="bg-white/15 backdrop-blur-xl rounded-3xl p-10 border border-white/20 shadow-2xl">
-            {/* Construction Icon */}
-            <div className="mb-2">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-green-500/20 rounded-full mb-6">
-                <Icon
-                  icon="carbon:construction"
-                  className="text-5xl text-white "
-                />
-              </div>
-            </div>
-
-            <h2 className="text-4xl font-semibold text-white mb-8 leading-tight">
-              We are redesigning our digital home
-            </h2>
-
-            <p className="text-2xl text-white/90 font-light">
-              We will be back online soon!
-            </p>
-
-          </div>
-        </div>
-
-        {/* Contact Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl w-full">
-          {/* Email Card */}
-          <div className="group transform hover:scale-105 transition-all duration-300">
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 h-full">
-              <div className="mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                  <Icon
-                    icon="mdi:email"
-                    className="text-4xl text-green-300"
-                  />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
-                Email Us
-              </h3>
-              <a
-                href="mailto:info@gesitech.africa"
-                className="text-white hover:text-green-100 transition-colors duration-300 break-all text-lg"
-              >
-                info@gesitech.africa
-              </a>
-            </div>
-          </div>
-
-          {/* Phone Card */}
-          <div className="group transform hover:scale-105 transition-all duration-300">
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 h-full">
-              <div className="mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                  <Icon
-                    icon="mdi:phone"
-                    className="text-4xl text-green-300"
-                  />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Call Us</h3>
-              <a
-                href="tel:+254701850850"
-                className="text-white hover:text-green-100 transition-colors duration-300 text-lg"
-              >
-                +254 701 850 850
-              </a>
-            </div>
-          </div>
-
-          {/* Location Card */}
-          <div className="group transform hover:scale-105 transition-all duration-300">
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 h-full">
-              <div className="mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                  <Icon
-                    icon="mdi:map-marker"
-                    className="text-4xl text-green-300"
-                  />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
-                Visit Us
-              </h3>
-              <p className="text-white leading-relaxed">
-                7th floor, Mitsumi Business Park,
-                <br />
-                Muthithi Road, Westlands
-                <br />
-                Nairobi, Kenya
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <section className="bg-gesitech-blue/10 pt-32 pb-16">
+          <div className="flex flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
+            <div className="flex flex-col items-start justify-center">
+              <h2 className="text-5xl font-bold text-gesitech-blue mb-8">
+                Powering Africa with Safe, Reliable, and Sustainable LPG
+                Solutions
+              </h2>
+              <p className="text-gray-500 text-lg">
+                Trusted since 2017, Gesitech Solutions Africa delivers
+                world-class LPG accessories, plant installations, and
+                maintenance services that drive growth, protect communities, and
+                support a cleaner energy future.
               </p>
+              <div className="flex flex-row items-center justify-start gap-4 mt-8">
+                <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-4 rounded-xl text-lg cursor-pointer">
+                  Explore Our Services
+                </button>
+                <button className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-4 rounded-xl text-lg cursor-pointer">
+                  Discover Our Products
+                </button>
+              </div>
+              <div className="flex flex-row items-center justify-start gap-4 mt-8">
+                <span className="text-gesitech-gray font-semibold flex items-center gap-2 text-md">
+                  <Icon
+                    icon="mdi:circle"
+                    className="text-gesitech-green text-2xl"
+                  />
+                  EPRA & ISO Certified
+                </span>
+                <span className="text-gesitech-gray font-semibold flex items-center gap-2 text-md">
+                  <Icon
+                    icon="mdi:circle"
+                    className="text-gesitech-green text-2xl"
+                  />
+                  Turnkey Delivery
+                </span>
+                <span className="text-gesitech-gray font-semibold flex items-center gap-2 text-md">
+                  <Icon
+                    icon="mdi:circle"
+                    className="text-gesitech-green text-2xl"
+                  />
+                  Trusted Since 2017
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-row items-center justify-center">
+              <Image
+                src="/assets/images/header-img.png"
+                alt="Gesitech Solutions Africa"
+                width={1000}
+                height={100}
+                className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl"
+              />
             </div>
           </div>
-        </div>
+        </section>
+
+        <section className="bg-gesitech-green/10 pt-32 pb-16">
+          <div className="flex flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
+            <div className="flex flex-row items-center justify-center w-1/2">
+              <Image
+                src="/assets/images/whoweare.png"
+                alt="Gesitech Solutions Africa"
+                width={1000}
+                height={100}
+                className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl"
+              />
+            </div>
+
+            <div className="flex flex-col items-start justify-center w-1/2">
+              <div className="flex flex-row items-center justify-start gap-4 mb-8">
+                <Image
+                  src="/assets/images/leaf.svg"
+                  alt="Who we are"
+                  width={40}
+                  height={0}
+                  className="transition-all duration-300"
+                />
+                <h2 className="text-4xl font-bold text-gesitech-blue">
+                  Who We Are
+                </h2>
+              </div>
+              <p className="text-gray-500 text-lg">
+                Since 2017, Gesitech Solutions Africa has been at the forefront
+                of safe, reliable, and sustainable LPG solutions. We partner
+                with businesses, industries, and communities to deliver
+                innovation, safety, and efficiency that power growth and protect
+                people and the environment. Our skilled professionals combine
+                technical expertise with hands-on experience, ensuring every
+                project exceeds expectations and complies with international
+                standards.
+              </p>
+              <div className="flex flex-col items-start justify-start gap-4 mt-8">
+                <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-md">
+                  <Icon
+                    icon="material-symbols:check"
+                    className="text-white text-3xl bg-gesitech-green rounded-full p-1"
+                  />
+                  Trusted partner across Africa since 2017
+                </span>
+                <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-md">
+                  <Icon
+                    icon="material-symbols:check"
+                    className="text-white text-3xl bg-gesitech-green rounded-full p-1"
+                  />
+                  End-to-end LPG supply, installation & maintenance
+                </span>
+                <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-md">
+                  <Icon
+                    icon="material-symbols:check"
+                    className="text-white text-3xl bg-gesitech-green rounded-full p-1"
+                  />
+                  Committed to sustainability and compliance
+                </span>
+                <div className="flex flex-row items-center justify-start gap-4 mt-8">
+                  <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-4 rounded-xl text-lg cursor-pointer">
+                    Explore Our Services
+                  </button>
+                  <button className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-4 rounded-xl text-lg cursor-pointer">
+                    Contact Us Today
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Footer */}
         <div className="mt-16 text-center">
           <p className="text-white/50 text-sm">
-            © {new Date().getFullYear()} Gesitech Solutions Africa. All rights reserved.
+            © {new Date().getFullYear()} Gesitech Solutions Africa. All rights
+            reserved.
           </p>
         </div>
       </div>
