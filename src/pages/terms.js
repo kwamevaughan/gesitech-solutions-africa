@@ -37,7 +37,7 @@ export default function Terms() {
               <section>
                 <h2 className="text-2xl font-bold text-gesitech-blue mb-4">1. Introduction</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Welcome to Gesitech Solutions Africa. These Terms and Conditions ("Terms") govern your use of our website and services. By accessing or using our services, you agree to be bound by these Terms.
+                  Welcome to Gesitech Solutions Africa. These Terms and Conditions (&quot;Terms&quot;) govern your use of our website and services. By accessing or using our services, you agree to be bound by these Terms.
                 </p>
               </section>
 
