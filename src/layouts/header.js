@@ -71,7 +71,7 @@ function Header() {
                     onClick={(e) => handleScroll(e, item.href, isFixed)}
                     className={`${
                       isFixed
-                        ? "text-gray-950 hover:text-gray-900"
+                        ? "text-gesitech-blue hover:text-gray-900"
                         : "text-gesitech-blue hover:text-white/90"
                     } hover:bg-gesitech-green px-4 py-2 rounded-full transition-all duration-300 cursor-pointer`}
                   >
@@ -83,7 +83,7 @@ function Header() {
                     href={item.href}
                     className={`${
                       isFixed
-                        ? "text-gray-950 hover:text-gray-900"
+                        ? "text-gesitech-blue hover:text-gray-900"
                         : "text-gesitech-blue hover:text-white/90"
                     } hover:bg-gradient-to-r from-gesitech-blue to-gesitech-green px-3 py-2 text-lg font-semibold rounded-full transition-all duration-300 cursor-pointer`}
                   >
