@@ -49,7 +49,7 @@ export default async function handler(req, res) {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
-    secure: false,
+    secure: process.env.EMAIL_SECURE === 'true',
     auth: {
       user: process.env.SMTP_EMAIL,
       pass: process.env.SMTP_PASSWORD,
@@ -190,10 +190,42 @@ export default async function handler(req, res) {
   </div>
   `;
 
+  const customerConfirmationText = `
+Dear ${name},
+
+Thank you for reaching out to Gesitech Solutions Africa for your LPG solutions needs. We have received your quote request and our team will review your requirements carefully.
+
+WHAT HAPPENS NEXT?
+- Our technical team will review your project requirements
+- We'll prepare a customized quote based on your specific needs  
+- A member of our team will contact you within 24-48 hours
+- We'll schedule a consultation to discuss your LPG solutions in detail
+
+YOUR REQUEST SUMMARY:
+Company: ${company}
+Industry: ${industry}
+Project Scale: ${teamSize}
+Timeline: ${timeline}
+Services: ${services.join(", ") || "None selected"}
+
+CONTACT INFORMATION:
+Email: info@gesitech.africa
+Office: 7th floor, Mitsumi Business Park, Muthithi Road, Westlands, Nairobi
+Address: P.O. Box 856-00100, Kenya
+
+This is an automated confirmation email from Gesitech Solutions Africa.
+If you have any immediate questions, please don't hesitate to contact us.
+
+Best regards,
+Gesitech Solutions Africa Team
+  `;
+
   const customerMailOptions = {
     from: `"Gesitech Solutions Africa" <${process.env.SMTP_EMAIL}>`,
     to: email,
+    replyTo: process.env.EMAIL_REPLYTO || process.env.SMTP_EMAIL,
     subject: `Thank you for your LPG Solutions inquiry - Gesitech Solutions Africa`,
+    text: customerConfirmationText,
     html: customerConfirmationHtml,
   };
 

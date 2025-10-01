@@ -440,7 +440,7 @@ export default function ContactForm({
           <button
             type="submit"
             disabled={loading}
-            className="group relative px-8 py-4 bg-gradient-to-r from-gesitech-blue to-gesitech-green text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="group relative px-8 py-4 bg-gradient-to-r from-gesitech-blue to-gesitech-green text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none cursor-pointer"
           >
             <span className="relative z-10 flex items-center">
               {loading ? (
