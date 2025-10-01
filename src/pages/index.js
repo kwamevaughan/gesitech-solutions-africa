@@ -50,12 +50,12 @@ export default function Home() {
                 support a cleaner energy future.
               </p>
               <div className="flex flex-row items-center justify-start gap-4 mt-8">
-                <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-4 rounded-xl text-lg cursor-pointer">
+                <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-2 rounded-xl text-lg cursor-pointer">
                   Explore Our Services
                 </button>
                 <button 
                   onClick={openContactModal}
-                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-4 rounded-xl text-lg cursor-pointer"
+                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-2 rounded-xl text-lg cursor-pointer"
                 >
                   Get Quote
                 </button>
@@ -155,12 +155,12 @@ export default function Home() {
                   Committed to sustainability and compliance
                 </span>
                 <div className="flex flex-row items-center justify-start gap-4 mt-8">
-                  <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-4 rounded-xl text-lg cursor-pointer">
+                  <button className="bg-gradient-to-r from-gesitech-green to-gesitech-blue hover:bg-gesitech-blue hover:-translate-y-1 transition-all duration-300 text-white px-4 py-3 rounded-xl text-lg cursor-pointer">
                     Explore Our Services
                   </button>
                   <button 
                   onClick={openContactModal}
-                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-4 rounded-xl text-lg cursor-pointer"
+                  className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-4 py-3 rounded-xl text-lg cursor-pointer"
                 >
                     Contact Us Today
                   </button>

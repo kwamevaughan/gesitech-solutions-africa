@@ -73,10 +73,10 @@ function Header() {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center">
               {menuItems.map((item) =>
                 item.isAnchor ? (
-                  <a
+                  <Link
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleScroll(e, item.href, isFixed)}
@@ -84,10 +84,10 @@ function Header() {
                       isFixed
                         ? "text-gesitech-blue hover:text-gray-900"
                         : "text-gesitech-blue hover:text-white/90"
-                    } hover:bg-gesitech-green px-4 py-2 rounded-full transition-all duration-300 cursor-pointer`}
+                    } hover:bg-gradient-to-r from-gesitech-blue to-gesitech-green font-semibold px-4 py-2 rounded-full transition-all duration-300 cursor-pointer`}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ) : (
                   <Link
                     key={item.href}
@@ -109,7 +109,7 @@ function Header() {
           <div className="hidden md:flex flex-shrink-0">
             <button
               onClick={openContactModal}
-              className="bg-gradient-to-r from-gesitech-blue to-gesitech-green text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="bg-gradient-to-r from-gesitech-blue to-gesitech-green text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               Contact
             </button>
@@ -124,7 +124,7 @@ function Header() {
           <div className="px-4 py-2 space-y-1">
             {menuItems.map((item) =>
               item.isAnchor ? (
-                <a
+                <Link
                   key={`mobile-${item.href}`}
                   href={item.href}
                   onClick={(e) => {
@@ -134,7 +134,7 @@ function Header() {
                   className="block px-4 py-2 text-gray-900 hover:bg-gesitech-green font-bold rounded-full transition-all duration-300"
                 >
                   {item.label}
-                </a>
+                </Link>
               ) : (
                 <Link
                   key={`mobile-${item.href}`}
