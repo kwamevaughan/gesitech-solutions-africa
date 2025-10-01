@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import Header from "../layouts/header";
+import Timeline from "../components/Timeline";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -417,6 +418,30 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="bg-gesitech-blue/5 pt-20 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Image
+                  src="/assets/images/leaf.svg"
+                  alt="Our Journey"
+                  width={30}
+                  height={30}
+                  className="transition-all duration-300"
+                />
+                <h2 className="text-4xl font-bold text-gesitech-blue">
+                  Our Growth Story
+                </h2>
+              </div>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                A horizontal timeline of our journey from 2017 to today.
+              </p>
+            </div>
+
+            <Timeline />
           </div>
         </section>
 
