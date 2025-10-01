@@ -7,6 +7,7 @@ import TeamMembers from "@/components/TeamMembers";
 import Footer from "../layouts/footer";
 import ScrollToTop from "../components/ScrollToTop";
 import ContactModal from "../components/ContactModal";
+import SEO from "../components/SEO";
 import Link from "next/link";
 
 export default function Home() {
@@ -28,9 +29,16 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen relative overflow-hidden mx-auto">
-      {/* Header */}
-      <Header />
+    <>
+      <SEO 
+        title="Gesitech Solutions Africa | Safe, Reliable LPG Solutions Across Africa"
+        description="Trusted LPG solutions provider in Africa since 2017. We deliver world-class LPG accessories, plant installations, and maintenance services that drive growth, protect communities, and support a cleaner energy future."
+        keywords="LPG solutions Africa, LPG accessories Kenya, LPG plant installation, LPG maintenance services, EPRA licensed LPG, ISO certified LPG services, Nairobi LPG solutions, sustainable energy Africa"
+      />
+      
+      <div className="min-h-screen relative overflow-hidden mx-auto">
+        {/* Header */}
+        <Header />
 
       {/* Scroll to Top Button */}
       <ScrollToTop />
@@ -719,6 +727,7 @@ export default function Home() {
 
       {/* Contact Modal */}
       <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
-    </div>
+      </div>
+    </>
   );
 }

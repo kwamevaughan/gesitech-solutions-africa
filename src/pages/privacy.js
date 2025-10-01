@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "../layouts/header";
 import Footer from "../layouts/footer";
 import ScrollToTop from "../components/ScrollToTop";
+import SEO from "../components/SEO";
 
 export default function Privacy() {
   const [mounted, setMounted] = useState(false);
@@ -13,9 +14,16 @@ export default function Privacy() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen relative overflow-hidden mx-auto">
-      {/* Header */}
-      <Header />
+    <>
+      <Head>
+        <title>Privacy Policy - Gesitech Solutions Africa</title>
+        <meta name="description" content="Privacy policy for Gesitech Solutions Africa. Learn how we collect, use, and protect your personal information and data." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      
+      <div className="min-h-screen relative overflow-hidden mx-auto">
+        {/* Header */}
+        <Header />
 
       {/* Scroll to Top Button */}
       <ScrollToTop />
@@ -181,6 +189,7 @@ export default function Privacy() {
         {/* Footer */}
         <Footer />
       </div>
-    </div>
+      </div>
+    </>
   );
 }

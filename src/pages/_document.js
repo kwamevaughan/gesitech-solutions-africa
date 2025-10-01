@@ -6,12 +6,10 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Site Meta */}
-          <title>Gesitech Solutions Africa</title>
           <meta
             name="description"
-            content="Gesitech Solutions Africa - Digital solutions and technology services"
+            content="Gesitech Solutions Africa - LPG solutions and technology services"
           />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
 
           {/* Favicon Links */}
           <link rel="icon" href="/favicon.ico" />

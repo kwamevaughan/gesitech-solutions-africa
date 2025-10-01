@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "../layouts/header";
 import Footer from "../layouts/footer";
 import ScrollToTop from "../components/ScrollToTop";
+import SEO from "../components/SEO";
 
 export default function Terms() {
   const [mounted, setMounted] = useState(false);
@@ -13,9 +14,17 @@ export default function Terms() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen relative overflow-hidden mx-auto">
-      {/* Header */}
-      <Header />
+    <>
+      <SEO 
+        title="Terms & Conditions - Gesitech Solutions Africa"
+        description="Terms and conditions for Gesitech Solutions Africa LPG services, including warranties, liability, and service agreements for safe and reliable LPG solutions."
+        keywords="LPG terms conditions, Gesitech warranty, LPG service agreement, EPRA compliance terms, LPG safety regulations Kenya"
+        noindex={false}
+      />
+      
+      <div className="min-h-screen relative overflow-hidden mx-auto">
+        {/* Header */}
+        <Header />
 
       {/* Scroll to Top Button */}
       <ScrollToTop />
@@ -140,6 +149,7 @@ export default function Terms() {
         {/* Footer */}
         <Footer />
       </div>
-    </div>
+      </div>
+    </>
   );
 }
