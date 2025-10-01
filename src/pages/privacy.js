@@ -15,11 +15,12 @@ export default function Privacy() {
 
   return (
     <>
-      <Head>
-        <title>Privacy Policy - Gesitech Solutions Africa</title>
-        <meta name="description" content="Privacy policy for Gesitech Solutions Africa. Learn how we collect, use, and protect your personal information and data." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <SEO 
+        title="Privacy Policy - Gesitech Solutions Africa"
+        description="Privacy policy for Gesitech Solutions Africa. Learn how we collect, use, and protect your personal information and data when using our LPG services."
+        keywords="Gesitech privacy policy, data protection Kenya, LPG services privacy, personal information security, GDPR compliance Africa"
+        noindex={false}
+      />
       
       <div className="min-h-screen relative overflow-hidden mx-auto">
         {/* Header */}
