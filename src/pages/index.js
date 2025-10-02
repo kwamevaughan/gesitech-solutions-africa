@@ -8,6 +8,7 @@ import Footer from "../layouts/footer";
 import ScrollToTop from "../components/ScrollToTop";
 import ContactModal from "../components/ContactModal";
 import SEO from "../components/SEO";
+import * as gtag from "../utils/gtag";
 import Link from "next/link";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
 
   const openContactModal = () => {
     setIsContactModalOpen(true);
+    gtag.trackContactModalOpen();
   };
 
   const closeContactModal = () => {

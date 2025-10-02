@@ -62,6 +62,12 @@ const SEO = ({
       <meta name="msapplication-TileColor" content="#22c55e" />
       <meta name="application-name" content="Gesitech Solutions Africa" />
       
+      {/* PWA Meta Tags */}
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-title" content="Gesitech" />
+      
       {/* Geo Meta Tags for Local SEO */}
       <meta name="geo.region" content="KE-30" />
       <meta name="geo.placename" content="Nairobi, Kenya" />

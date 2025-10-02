@@ -1,6 +1,9 @@
 import "../styles/globals.css";
 import { DM_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import * as gtag from "../utils/gtag";
 
 const dmSans = DM_Sans({
   weight: ["300", "400", "500", "600", "700"],
@@ -10,6 +13,20 @@ const dmSans = DM_Sans({
 });
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+    
+    router.events.on('routeChangeComplete', handleRouteChange);
+    
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <div
       className={dmSans.variable}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import ContactForm from "./ContactForm";
 import SimpleModal from "./SimpleModal";
+import * as gtag from "../utils/gtag";
 
 export default function ContactModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -57,6 +58,9 @@ export default function ContactModal({ isOpen, onClose }) {
 
       if (response.ok) {
         toast.success("Message sent successfully!", { id: toastId });
+
+        // Track successful form submission
+        gtag.trackContactFormSubmit();
 
         // Reset form
         setFormData({
