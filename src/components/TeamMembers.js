@@ -10,7 +10,7 @@ const TeamMembers = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Benvolio Otieno",
+      name: "Eng. Benvolio Otieno",
       title: "Co-Founder & Director",
       image: "/assets/images/benvolio.png",
       bio: "Benvolio is an engineer and operations expert with deep experience in supply chain management. At Gesitech Solutions Africa, he ensures that every project is delivered with technical precision, safety, and efficiency. Benvolio Otieno is a co-founder and Director at Gesitech Solutions Africa, where he leads with a strong background in Engineering, Operations, and Supply Chain management. With years of hands-on experience in building and optimizing systems, he is passionate about ensuring that every project delivered by Gesitech meets the highest standards of safety, efficiency, and reliability. Benvolio’s focus on operational excellence and technical precision has been instrumental in positioning Gesitech as a trusted name in the LPG sector. Beyond the boardroom, he is driven by a vision to make clean energy more accessible and sustainable across Africa.",
@@ -156,12 +156,12 @@ const TeamMembers = () => {
                         {selectedMember.phone}
                       </a>
                     </div>
-                    <div className="flex items-center text-gray-600">
+                    {/* <div className="flex items-center text-gray-600">
                       <Icon icon="mdi:linkedin" className="w-5 h-5 mr-3 text-[#0077B5]" />
                       <a href={selectedMember.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
                         LinkedIn Profile
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
