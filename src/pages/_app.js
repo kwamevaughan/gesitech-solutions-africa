@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Script from "next/script";
 import * as gtag from "../utils/gtag";
 
 const dmSans = DM_Sans({
@@ -28,11 +29,26 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <div
-      className={dmSans.variable}
-      style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}
-    >
-      <Component {...pageProps} />
+    <>
+      {/* Google Analytics */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${gtag.GA_TRACKING_ID}');
+        `}
+      </Script>
+
+      <div
+        className={dmSans.variable}
+        style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}
+      >
+        <Component {...pageProps} />
 
       {/* Toast Notifications */}
       <Toaster
@@ -87,7 +103,8 @@ function MyApp({ Component, pageProps }) {
           },
         }}
       />
-    </div>
+      </div>
+    </>
   );
 }
 
