@@ -38,7 +38,7 @@ export default function Terms() {
                 Terms & Conditions
               </h1>
               <p className="text-gray-600 text-lg">
-                Last updated: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                Last updated: 1 October 2025
               </p>
             </div>
 
