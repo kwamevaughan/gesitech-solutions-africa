@@ -6,6 +6,7 @@ import About from "./About";
 import MissionVision from "./MissionVision";
 import CoreValues from "./CoreValues";
 import WhatWeDo from "./WhatWeDo";
+import Products from "./Products";
 import GrowthStory from "./GrowthStory";
 import TeamSection from "./TeamSection";
 import Certifications from "./Certifications";
@@ -32,6 +33,7 @@ export default function HomeContent() {
       <MissionVision />
       <CoreValues />
       <WhatWeDo />
+      <Products />
       <GrowthStory />
       <TeamSection />
       <Certifications />
