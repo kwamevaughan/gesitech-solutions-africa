@@ -32,7 +32,7 @@ export default function Privacy() {
       {/* Main content */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <section className="bg-gesitech-blue/10 pt-32 pb-16 px-4">
-          <div className="max-w-7xl mx-auto">
+          <div className="container-fluid">
             <div className="text-center mb-12">
               <h1 className="text-7xl lg:text-5xl font-bold text-gesitech-blue mb-4">
                 Privacy Policy

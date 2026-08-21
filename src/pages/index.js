@@ -48,7 +48,7 @@ export default function Home() {
       {/* Main content */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <section id="home" className="bg-gesitech-blue/10 pt-32 pb-16 px-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 container-fluid">
             <div className="flex flex-col items-start justify-center lg:w-1/2">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gesitech-blue mb-6 lg:mb-8 text-center lg:text-left">
                 Powering Africa with Safe, Reliable, and Sustainable LPG
@@ -111,7 +111,7 @@ export default function Home() {
         </section>
 
         <section id="about" className="bg-gesitech-green/10 pt-20 pb-20 px-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 container-fluid">
             <div className="flex flex-row items-center justify-center lg:w-1/2 order-2 lg:order-1">
               <Image
                 src="/assets/images/whoweare.png"
@@ -186,7 +186,7 @@ export default function Home() {
         </section>
 
         <section id="mission" className="bg-gesitech-blue/10 pt-20 pb-20">
-          <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
+          <div className="flex flex-col items-center justify-between gap-4 container-fluid">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
                 <Image
@@ -262,7 +262,7 @@ export default function Home() {
         </section>
 
         <section className="bg-gesitech-blue pt-20 pb-20 px-4">
-          <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
+          <div className="flex flex-col items-center justify-between gap-4 container-fluid">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
                 <div className="w-[30px] h-[30px] text-white">
@@ -373,7 +373,7 @@ export default function Home() {
         </section>
 
         <section id="what-we-do" className="bg-white pt-20 pb-20 px-4">
-          <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
+          <div className="flex flex-col items-center justify-between gap-4 container-fluid">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
                 <div className="">
@@ -459,7 +459,7 @@ export default function Home() {
         </section>
 
         <section id="growth-story" className="bg-gesitech-blue/5 pt-20 pb-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container-fluid px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Image
@@ -483,7 +483,7 @@ export default function Home() {
         </section>
 
         <section id="team" className="bg-white pt-20 pb-20 px-4">
-          <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
+          <div className="flex flex-col items-center justify-between gap-4 container-fluid">
             <div className="flex flex-col items-center justify-start gap-2 mb-6">
               <div className="flex flex-row items-center justify-start gap-4">
                 <div className="">
@@ -509,7 +509,7 @@ export default function Home() {
         </section>
 
         <section id="certifications" className="bg-gesitech-blue/5 pt-20 pb-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container-fluid px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Image
@@ -625,7 +625,7 @@ export default function Home() {
         </section>
 
         <section id="partners" className="bg-white pt-20 pb-20 px-4">
-          <div className="flex flex-col items-center justify-between gap-4 max-w-7xl mx-auto">
+          <div className="flex flex-col items-center justify-between gap-4 container-fluid">
             <div className="flex flex-col items-center justify-start gap-2">
               <div className="flex flex-row items-center justify-start gap-4">
                 <div className="text-gesitech-blue">
