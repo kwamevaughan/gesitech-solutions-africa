@@ -32,17 +32,30 @@ const SimpleModal = ({
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
+
+  // Opening needs shouldRender true immediately (so the enter transition
+  // below has something to animate from) and closing needs isAnimating
+  // false immediately (so the exit transition starts right away) — both
+  // done during render (not an effect) so they land in the same commit
+  // as isOpen flipping.
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen);
+    if (isOpen) {
+      setShouldRender(true);
+    } else {
+      setIsAnimating(false);
+    }
+  }
 
   // Handle modal open/close with smooth transitions
   useEffect(() => {
     if (isOpen) {
-      setShouldRender(true);
       const timer = setTimeout(() => {
         setIsAnimating(true);
       }, 10);
       return () => clearTimeout(timer);
     } else {
-      setIsAnimating(false);
       const timer = setTimeout(() => {
         setShouldRender(false);
       }, animationDuration);
