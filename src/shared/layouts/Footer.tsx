@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 
@@ -13,18 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Section */}
           <div className="space-y-6">
-            {/* Logo */}
-            <div className="bg-white rounded-2xl px-4 py-2 inline-block">
-              <Link href="/" passHref>
-                <Image
-                  src="/assets/images/logo.png"
-                  alt="Gesitech Solutions Africa"
-                  width={240}
-                  height={240}
-                  className="h-20 w-auto"
-                />
-              </Link>
-            </div>
+            
 
             {/* Main Heading */}
             <div>

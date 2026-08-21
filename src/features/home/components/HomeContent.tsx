@@ -8,6 +8,7 @@ import CoreValues from "./CoreValues";
 import WhatWeDo from "./WhatWeDo";
 import Products from "./Products";
 import Platform from "./Platform";
+import Ecosystem from "./Ecosystem";
 import GrowthStory from "./GrowthStory";
 import TeamSection from "./TeamSection";
 import Certifications from "./Certifications";
@@ -36,6 +37,7 @@ export default function HomeContent() {
       <WhatWeDo />
       <Products />
       <Platform />
+      <Ecosystem />
       <GrowthStory />
       <TeamSection />
       <Certifications />

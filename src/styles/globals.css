@@ -19,6 +19,13 @@
   padding-inline: clamp(1rem, 5vw, 8rem);
 }
 
+/* Hide the floating reCAPTCHA v3 badge — permitted by Google's terms as
+   long as the "protected by reCAPTCHA" attribution text is shown
+   somewhere on the page, which our forms already include. */
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 @keyframes slideDown {
   from { transform: translateY(-100px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }

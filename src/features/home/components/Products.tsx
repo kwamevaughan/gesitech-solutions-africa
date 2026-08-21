@@ -187,7 +187,7 @@ export default function Products() {
             {visibleProducts.map((product) => (
               <div
                 key={product.name}
-                className="bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 rounded-2xl overflow-hidden flex flex-col"
+                className="bg-white border border-gray-100 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 rounded-2xl overflow-hidden flex flex-col"
               >
                 <div className="relative w-full h-64 bg-gray-50">
                   <Image

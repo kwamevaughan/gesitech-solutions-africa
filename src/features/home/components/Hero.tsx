@@ -64,7 +64,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
             alt="Gesitech Solutions Africa"
             width={1000}
             height={100}
-            className="hover:shadow-2xl transition-all duration-300 rounded-2xl w-full max-w-lg"
+            className="hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 rounded-2xl w-full max-w-lg"
           />
         </div>
       </div>

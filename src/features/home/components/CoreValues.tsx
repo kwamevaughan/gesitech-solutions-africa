@@ -27,7 +27,7 @@ export default function CoreValues() {
           <div className="flex flex-col items-start justify-center">
             <div className="flex flex-col items-center justify-start gap-4 mt-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 w-full">
-                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 p-6 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 p-6 rounded-xl h-full">
                   <Image
                     src="/assets/images/safety.svg"
                     alt="Safety"
@@ -43,7 +43,7 @@ export default function CoreValues() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 p-6 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 p-6 rounded-xl h-full">
                   <Image
                     src="/assets/images/innovation.svg"
                     alt="Innovation"
@@ -59,7 +59,7 @@ export default function CoreValues() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 p-6 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 p-6 rounded-xl h-full">
                   <Image
                     src="/assets/images/integrity.svg"
                     alt="Integrity"
@@ -75,7 +75,7 @@ export default function CoreValues() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 p-6 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 p-6 rounded-xl h-full">
                   <Image
                     src="/assets/images/customer-focus.svg"
                     alt="Customer Focus"
@@ -91,7 +91,7 @@ export default function CoreValues() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 p-6 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 p-6 rounded-xl h-full">
                   <Image
                     src="/assets/images/sustainability.svg"
                     alt="Sustainability"

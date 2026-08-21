@@ -72,7 +72,7 @@ const TeamMembers = () => {
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2"
+              className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-500 cursor-pointer transform hover:-translate-y-2"
               onClick={() => handleMemberClick(member)}
             >
               {/* Image Container */}

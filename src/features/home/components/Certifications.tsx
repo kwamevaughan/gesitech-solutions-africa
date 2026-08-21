@@ -24,7 +24,7 @@ export default function Certifications() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-          <div className="flex flex-row items-center justify-start gap-4 border border-gesitech-blue bg-gesitech-blue/30 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-4 py-4 rounded-xl">
+          <div className="flex flex-row items-center justify-start gap-4 border border-gesitech-blue bg-gesitech-blue/30 hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-4 py-4 rounded-xl">
             <Icon
               icon="material-symbols:check"
               className="text-white text-3xl bg-gesitech-blue rounded-full p-1"
@@ -35,7 +35,7 @@ export default function Certifications() {
             </div>
           </div>
 
-          <div className="flex flex-row items-center justify-start gap-4 border border-gesitech-blue bg-gesitech-blue/30 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-4 py-4 rounded-xl">
+          <div className="flex flex-row items-center justify-start gap-4 border border-gesitech-blue bg-gesitech-blue/30 hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-4 py-4 rounded-xl">
             <Icon
               icon="material-symbols:check"
               className="text-white text-3xl bg-gesitech-blue rounded-full p-1"
@@ -47,7 +47,7 @@ export default function Certifications() {
               </p>
             </div>
           </div>
-          <div className="flex flex-row items-center justify-start gap-4 border border-gesitech-blue bg-gesitech-blue/30 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-4 py-4 rounded-xl">
+          <div className="flex flex-row items-center justify-start gap-4 border border-gesitech-blue bg-gesitech-blue/30 hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-4 py-4 rounded-xl">
             <Icon
               icon="material-symbols:check"
               className="text-white text-3xl bg-gesitech-blue rounded-full p-1"
@@ -62,7 +62,7 @@ export default function Certifications() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full mt-10">
-          <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-8 rounded-xl h-full">
+          <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-6 py-8 rounded-xl h-full">
             <span className="bg-gesitech-green/20 border border-gesitech-green px-4 py-1 text-gesitech-green text-xs rounded-full">
               Regulatory
             </span>
@@ -89,7 +89,7 @@ export default function Certifications() {
             </div>
           </div>
 
-          <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-8 rounded-xl h-full">
+          <div className="flex flex-col items-start justify-start gap-2 bg-white hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-6 py-8 rounded-xl h-full">
             <span className="bg-gesitech-green/20 border border-gesitech-green px-4 py-1 text-gesitech-green text-xs rounded-full">
               Standards
             </span>

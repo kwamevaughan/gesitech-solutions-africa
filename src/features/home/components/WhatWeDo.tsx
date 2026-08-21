@@ -28,7 +28,7 @@ export default function WhatWeDo() {
           <div className="flex flex-col items-start justify-center">
             <div className="flex flex-col items-center justify-start gap-4 mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-green hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-10 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-green hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-6 py-10 rounded-xl h-full">
                   <Image
                     src="/assets/images/lpg-accessories.png"
                     alt="LPG Accessories"
@@ -46,7 +46,7 @@ export default function WhatWeDo() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-green hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-10 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-green hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-6 py-10 rounded-xl h-full">
                   <Image
                     src="/assets/images/lpg-plant.png"
                     alt="LPG Plants"
@@ -64,7 +64,7 @@ export default function WhatWeDo() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-green hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-10 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-green hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-6 py-10 rounded-xl h-full">
                   <Image
                     src="/assets/images/lpg-maintenance.png"
                     alt="LPG Maintenance"

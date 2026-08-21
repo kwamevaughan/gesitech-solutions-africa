@@ -25,7 +25,7 @@ export default function MissionVision() {
         <div className="flex flex-col lg:flex-row items-stretch justify-between gap-10 w-full">
           <div className="flex flex-col items-start justify-center lg:w-3/5 h-full">
             <div className="flex flex-col items-stretch justify-start gap-4 h-full w-full">
-              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl h-full">
+              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-4 py-10 rounded-xl h-full">
                 <Image
                   src="/assets/images/mission.png"
                   alt="Mission"
@@ -44,7 +44,7 @@ export default function MissionVision() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl h-full">
+              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-4 py-10 rounded-xl h-full">
                 <Image
                   src="/assets/images/vision.png"
                   alt="Vision"
@@ -70,7 +70,7 @@ export default function MissionVision() {
               src="/assets/images/missionvission.jpg"
               alt="Mission and Vision"
               fill
-              className="hover:shadow-2xl transition-all duration-300 rounded-2xl object-cover"
+              className="hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 rounded-2xl object-cover"
             />
           </div>
         </div>

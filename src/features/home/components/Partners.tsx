@@ -27,7 +27,7 @@ export default function Partners() {
           <div className="flex flex-col items-start justify-center">
             <div className="flex flex-col items-center justify-start gap-4 mt-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-blue hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-10 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-blue hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-6 py-10 rounded-xl h-full">
                   <Image
                     src="/assets/images/global-manu.png"
                     alt="Global Manufacturers"
@@ -44,7 +44,7 @@ export default function Partners() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-blue hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-10 rounded-xl ">
+                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-blue hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-6 py-10 rounded-xl ">
                   <Image
                     src="/assets/images/energy.png"
                     alt="Energy Distributors & Marketers"
@@ -61,7 +61,7 @@ export default function Partners() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-blue hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-10 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-blue hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-6 py-10 rounded-xl h-full">
                   <Image
                     src="/assets/images/reg.png"
                     alt="Regulatory Bodies & Institutions"
@@ -78,7 +78,7 @@ export default function Partners() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-blue hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 px-6 py-10 rounded-xl h-full">
+                <div className="flex flex-col items-start justify-start gap-2 bg-gesitech-blue hover:-translate-y-1 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 px-6 py-10 rounded-xl h-full">
                   <Image
                     src="/assets/images/corp.png"
                     alt="Corporate Clients & Industries"

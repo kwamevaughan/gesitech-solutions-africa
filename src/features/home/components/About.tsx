@@ -59,7 +59,7 @@ export default function About({ onOpenContact }: AboutProps) {
             alt="Gesitech Solutions Africa"
             width={1000}
             height={100}
-            className="hover:shadow-2xl transition-all duration-300 rounded-2xl w-full max-w-xl"
+            className="hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.10)] transition-all duration-300 rounded-2xl w-full max-w-xl"
           />
           <div className="absolute bottom-0 left-4 translate-y-1/2 bg-gradient-to-r from-gesitech-green to-gesitech-blue rounded-2xl px-8 py-6 flex items-center gap-4 shadow-lg">
             <Icon icon="mdi:fire" className="text-white text-5xl flex-shrink-0" />
