@@ -89,7 +89,7 @@ function MobileMenu({
         transitionDuration: `${MENU_TRANSITION_MS}ms`,
         transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
       }}
-      className={`fixed inset-x-6 bottom-0 z-50 isolate flex flex-col overflow-y-auto rounded-t-4xl transition-[transform,opacity] lg:hidden ${
+      className={`fixed inset-x-6 bottom-0 z-50 isolate flex flex-col overflow-y-auto rounded-t-4xl transition-[transform,opacity] xl:hidden ${
         entered ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
       }`}
     >
@@ -272,7 +272,7 @@ export default function Navbar() {
         transition:
           "top 500ms cubic-bezier(0.22, 1, 0.36, 1), margin 500ms cubic-bezier(0.22, 1, 0.36, 1), border-radius 500ms cubic-bezier(0.22, 1, 0.36, 1), transform 550ms cubic-bezier(0.65, 0, 0.35, 1)",
       }}
-      className="fixed inset-x-0 top-4 z-60 isolate mx-6 overflow-hidden rounded-4xl lg:mx-24"
+      className="fixed inset-x-0 top-4 z-60 isolate mx-6 overflow-hidden rounded-4xl xl:mx-10 2xl:mx-24"
     >
       {/* "Liquid glass": a distorted+blurred backdrop layer, a faint
           white tint, and an inset specular highlight — stacked in that
@@ -301,7 +301,7 @@ export default function Navbar() {
 
       <nav
         style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
-        className={`relative mx-auto grid w-full grid-cols-[auto_1fr_auto] items-center px-3 transition-[height] duration-500 lg:px-5 ${
+        className={`relative mx-auto grid w-full grid-cols-[auto_1fr_auto] items-center px-3 transition-[height] duration-500 xl:px-4 ${
           isScrolled ? "h-20" : "h-24"
         }`}
       >
@@ -318,7 +318,7 @@ export default function Navbar() {
         <div
           ref={navLinksRef}
           onMouseLeave={() => setHoverRect(null)}
-          className="relative mx-auto hidden items-center justify-center lg:flex"
+          className="relative mx-auto hidden items-center justify-center xl:flex"
         >
           {/* One persistent highlight, measured off whichever link is
               hovered and animated via `animate` (not layoutId): a
@@ -358,7 +358,7 @@ export default function Navbar() {
                 setHoverRect(rect);
                 setLastHoverRect(rect);
               }}
-              className="relative z-10 inline-flex h-10 items-center rounded-full px-3 text-md font-medium text-gesitech-blue whitespace-nowrap transition-colors hover:text-gesitech-green"
+              className="relative z-10 inline-flex h-10 items-center rounded-full px-2 text-sm font-medium text-gesitech-blue whitespace-nowrap transition-colors hover:text-gesitech-green xl:px-2.5 2xl:px-3 2xl:text-md"
             >
               {link.label}
             </a>
@@ -369,7 +369,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={openContact}
-            className="hidden h-10 items-center rounded-full bg-gradient-to-r from-gesitech-blue to-gesitech-green px-6 text-md font-semibold text-white whitespace-nowrap shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer lg:inline-flex"
+            className="hidden h-10 items-center rounded-full bg-gradient-to-r from-gesitech-blue to-gesitech-green px-5 text-sm font-semibold text-white whitespace-nowrap shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer xl:inline-flex 2xl:px-6 2xl:text-md"
           >
             Get Quote
           </button>
@@ -379,7 +379,7 @@ export default function Navbar() {
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             onClick={() => setIsOpen((open) => !open)}
-            className="relative flex h-10 w-10 items-center justify-center rounded-full text-gesitech-blue lg:hidden"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full text-gesitech-blue xl:hidden"
           >
             <span
               key={isOpen ? "close" : "open"}

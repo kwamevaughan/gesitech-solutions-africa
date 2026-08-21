@@ -22,10 +22,10 @@ export default function MissionVision() {
             innovation.
           </p>
         </div>
-        <div className="flex flex-row items-center justify-between gap-10">
-          <div className="flex flex-col items-start justify-center">
-            <div className="flex flex-col items-center justify-start gap-4 mt-8">
-              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl">
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-10 w-full">
+          <div className="flex flex-col items-start justify-center lg:w-3/5 h-full">
+            <div className="flex flex-col items-stretch justify-start gap-4 h-full w-full">
+              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl h-full">
                 <Image
                   src="/assets/images/mission.png"
                   alt="Mission"
@@ -44,7 +44,7 @@ export default function MissionVision() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl">
+              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl h-full">
                 <Image
                   src="/assets/images/vision.png"
                   alt="Vision"
@@ -65,13 +65,12 @@ export default function MissionVision() {
             </div>
           </div>
 
-          <div className="flex flex-row items-center justify-center">
+          <div className="relative flex flex-row items-center justify-center lg:w-2/5 min-h-80">
             <Image
-              src="/assets/images/mission-vision.png"
+              src="/assets/images/missionvission.jpg"
               alt="Mission and Vision"
-              width={700}
-              height={0}
-              className="hover:shadow-2xl transition-all duration-300 rounded-2xl"
+              fill
+              className="hover:shadow-2xl transition-all duration-300 rounded-2xl object-cover"
             />
           </div>
         </div>
