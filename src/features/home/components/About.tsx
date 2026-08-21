@@ -83,35 +83,35 @@ export default function About({ onOpenContact }: AboutProps) {
               Who We Are
             </h2>
           </div>
-          <p className="text-gray-500 text-base lg:text-lg text-center lg:text-left">
+          <p className="text-gray-500 text-base lg:text-lg">
             Since 2017, Gesitech Solutions Africa has been at the forefront
             of safe, reliable, and sustainable LPG solutions. We partner
             with businesses, industries, and communities to deliver
             innovation, safety, and efficiency that power growth and protect
             people and the environment.
           </p>
-          <p className="text-gray-500 text-base lg:text-lg text-center lg:text-left mt-4">
+          <p className="text-gray-500 text-base lg:text-lg mt-4">
             Our skilled professionals combine
             technical expertise with hands-on experience, ensuring every
             project exceeds expectations and complies with international
             standards.
           </p>
-          <div className="flex flex-col items-center lg:items-start justify-start gap-4 mt-6 lg:mt-8">
-            <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-base lg:text-lg text-center lg:text-left">
+          <div className="flex flex-col items-start justify-start gap-4 mt-6 lg:mt-8">
+            <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-base lg:text-lg text-left">
               <Icon
                 icon="material-symbols:check"
                 className="text-white text-2xl lg:text-3xl bg-gesitech-green rounded-full p-1 flex-shrink-0"
               />
               Trusted partner across Africa since 2017
             </span>
-            <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-base lg:text-lg text-center lg:text-left">
+            <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-base lg:text-lg text-left">
               <Icon
                 icon="material-symbols:check"
                 className="text-white text-2xl lg:text-3xl bg-gesitech-green rounded-full p-1 flex-shrink-0"
               />
               End-to-end LPG supply, installation & maintenance
             </span>
-            <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-base lg:text-lg text-center lg:text-left">
+            <span className="text-gesitech-blue font-semibold flex items-center gap-2 text-base lg:text-lg text-left">
               <Icon
                 icon="material-symbols:check"
                 className="text-white text-2xl lg:text-3xl bg-gesitech-green rounded-full p-1 flex-shrink-0"

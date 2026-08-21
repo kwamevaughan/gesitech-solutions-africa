@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   other: {
     "mobile-web-app-capable": "yes",
     "msapplication-config": "/browserconfig.xml",
-    "msapplication-TileColor": "#22c55e",
+    "msapplication-TileColor": "#36578D",
     "msapplication-tap-highlight": "no",
   },
   openGraph: {
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#22c55e",
+  themeColor: "#36578D",
 };
 
 export default function RootLayout({

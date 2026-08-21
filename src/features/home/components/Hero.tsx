@@ -14,7 +14,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gesitech-blue mb-6 lg:mb-8 text-center lg:text-left">
             Powering Africa with Safe, Reliable, and Sustainable LPG Solutions
           </h2>
-          <p className="text-gray-500 text-base lg:text-lg text-center lg:text-left">
+          <p className="text-gray-500 text-base lg:text-lg">
             Trusted since 2017, Gesitech Solutions Africa delivers world-class
             LPG accessories, plant installations, and maintenance services that
             drive growth, protect communities, and support a cleaner energy

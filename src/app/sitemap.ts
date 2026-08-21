@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = "https://gesitech.africa";
-  const routes = ["", "/privacy", "/terms", "/landingpage"];
+  const routes = ["", "/legal", "/landingpage"];
 
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,

@@ -89,7 +89,7 @@ function MobileMenu({
         transitionDuration: `${MENU_TRANSITION_MS}ms`,
         transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
       }}
-      className={`fixed inset-x-6 bottom-0 z-50 isolate flex flex-col overflow-y-auto rounded-t-4xl transition-[transform,opacity] xl:hidden ${
+      className={`fixed inset-x-6 bottom-0 z-50 isolate flex flex-col overflow-y-auto rounded-t-4xl transition-[transform,opacity] lg:hidden ${
         entered ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
       }`}
     >
@@ -318,7 +318,7 @@ export default function Navbar() {
         <div
           ref={navLinksRef}
           onMouseLeave={() => setHoverRect(null)}
-          className="relative mx-auto hidden items-center justify-center xl:flex"
+          className="relative mx-auto hidden items-center justify-center lg:flex"
         >
           {/* One persistent highlight, measured off whichever link is
               hovered and animated via `animate` (not layoutId): a
@@ -369,7 +369,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={openContact}
-            className="hidden h-10 items-center rounded-full bg-gradient-to-r from-gesitech-blue to-gesitech-green px-5 text-sm font-semibold text-white whitespace-nowrap shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer xl:inline-flex 2xl:px-6 2xl:text-md"
+            className="hidden h-10 items-center rounded-full bg-gradient-to-r from-gesitech-blue to-gesitech-green px-3 text-sm font-semibold text-white whitespace-nowrap shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer lg:inline-flex xl:px-5 2xl:px-6 2xl:text-md"
           >
             Get Quote
           </button>
@@ -379,7 +379,7 @@ export default function Navbar() {
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             onClick={() => setIsOpen((open) => !open)}
-            className="relative flex h-10 w-10 items-center justify-center rounded-full text-gesitech-blue xl:hidden"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full text-gesitech-blue lg:hidden"
           >
             <span
               key={isOpen ? "close" : "open"}
