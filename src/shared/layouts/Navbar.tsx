@@ -32,13 +32,11 @@ function scrollToAnchor(href: string) {
 function MobileMenu({
   isOpen,
   onNavigate,
-  isScrolled,
   topOffset,
   onOpenContact,
 }: {
   isOpen: boolean;
   onNavigate: () => void;
-  isScrolled: boolean;
   topOffset: number;
   onOpenContact: () => void;
 }) {
@@ -401,7 +399,6 @@ export default function Navbar() {
     <MobileMenu
       isOpen={isOpen}
       onNavigate={() => setIsOpen(false)}
-      isScrolled={isScrolled}
       topOffset={menuTop}
       onOpenContact={openContact}
     />
