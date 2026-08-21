@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function WhatWeDo() {
   return (
-    <section id="what-we-do" className="bg-white pt-20 pb-20 px-4">
-      <div className="flex flex-col items-center justify-between gap-4 container-fluid">
+    <section id="what-we-do" className="bg-white pt-20 pb-20">
+      <div className="flex flex-col items-center justify-between gap-4 container-fluid px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-start gap-2 mb-6">
           <div className="flex flex-row items-center justify-start gap-4">
             <div className="">

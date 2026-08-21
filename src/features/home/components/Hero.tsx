@@ -8,9 +8,9 @@ interface HeroProps {
 
 export default function Hero({ onOpenContact }: HeroProps) {
   return (
-    <section id="home" className="bg-gesitech-blue/10 pt-46 pb-18 px-4">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-10 container-fluid">
-        <div className="flex flex-col items-start justify-center lg:w-3/5">
+    <section id="home" className="bg-gesitech-blue/10 pt-46 pb-18">
+      <div className="flex flex-col lg:flex-row items-center gap-10 container-fluid px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-start justify-center lg:flex-[3] min-w-0">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gesitech-blue mb-6 lg:mb-8 text-center lg:text-left">
             Powering Africa with Safe, Reliable, and Sustainable LPG Solutions
           </h2>
@@ -58,7 +58,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </div>
         </div>
 
-        <div className="flex flex-row items-center justify-center lg:w-2/5 mt-8 lg:mt-0">
+        <div className="flex flex-row items-center justify-center lg:flex-[2] min-w-0 mt-8 lg:mt-0 w-full">
           <Image
             src="/assets/images/hero-img.jpg"
             alt="Gesitech Solutions Africa"

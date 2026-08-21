@@ -3,8 +3,8 @@ import TeamMembers from "./TeamMembers";
 
 export default function TeamSection() {
   return (
-    <section id="team" className="bg-white pt-20 pb-20 px-4">
-      <div className="flex flex-col items-center justify-between gap-4 container-fluid">
+    <section id="team" className="bg-white pt-20 pb-20">
+      <div className="flex flex-col items-center justify-between gap-4 container-fluid px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-start gap-2 mb-6">
           <div className="flex flex-row items-center justify-start gap-4">
             <div className="">

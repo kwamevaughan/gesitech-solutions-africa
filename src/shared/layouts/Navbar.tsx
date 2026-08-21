@@ -113,7 +113,7 @@ function MobileMenu({
         className="ring-1 ring-white/10 shadow-lg shadow-black/20 pointer-events-none absolute inset-0 rounded-[inherit]"
       />
 
-      <nav className="container-fluid relative flex flex-1 flex-col justify-center gap-1 py-8">
+      <nav className="container-fluid px-4 sm:px-6 lg:px-8 relative flex flex-1 flex-col justify-center gap-1 py-8">
         {navLinks.map((link: NavLink, index: number) => (
           <div
             key={link.href}
@@ -149,7 +149,7 @@ function MobileMenu({
           transitionDelay: `${100 + navLinks.length * 60}ms`,
           transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
         }}
-        className={`container-fluid relative flex flex-col items-start gap-4 border-t border-white/10 py-6 transition-[transform,opacity] ${
+        className={`container-fluid px-4 sm:px-6 lg:px-8 relative flex flex-col items-start gap-4 border-t border-white/10 py-6 transition-[transform,opacity] ${
           entered ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
         }`}
       >

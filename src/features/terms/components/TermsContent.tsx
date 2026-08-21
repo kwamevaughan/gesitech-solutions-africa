@@ -1,7 +1,7 @@
 export default function TermsContent() {
   return (
-    <section className="bg-gesitech-blue/10 pt-32 pb-16 px-4">
-      <div className="container-fluid">
+    <section className="bg-gesitech-blue/10 pt-32 pb-16">
+      <div className="container-fluid px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-7xl lg:text-5xl font-bold text-gesitech-blue mb-4">
             Terms & Conditions
