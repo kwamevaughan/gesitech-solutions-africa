@@ -16,7 +16,7 @@ export default function About({ onOpenContact }: AboutProps) {
             alt="Gesitech Solutions Africa"
             width={1000}
             height={100}
-            className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl w-full max-w-lg"
+            className="hover:shadow-2xl transition-all duration-300 rounded-2xl w-full max-w-lg"
           />
         </div>
 

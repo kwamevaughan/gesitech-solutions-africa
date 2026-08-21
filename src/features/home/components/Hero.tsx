@@ -8,17 +8,17 @@ interface HeroProps {
 
 export default function Hero({ onOpenContact }: HeroProps) {
   return (
-    <section id="home" className="bg-gesitech-blue/10 pt-32 pb-16 px-4">
+    <section id="home" className="bg-gesitech-blue/10 -mt-28 pt-46 pb-18 px-4">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-10 container-fluid">
-        <div className="flex flex-col items-start justify-center lg:w-1/2">
+        <div className="flex flex-col items-start justify-center lg:w-3/5">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gesitech-blue mb-6 lg:mb-8 text-center lg:text-left">
             Powering Africa with Safe, Reliable, and Sustainable LPG Solutions
           </h2>
           <p className="text-gray-500 text-base lg:text-lg text-center lg:text-left">
-            Trusted since 2017, Gesitech Solutions Africa delivers
-            world-class LPG accessories, plant installations, and
-            maintenance services that drive growth, protect communities, and
-            support a cleaner energy future.
+            Trusted since 2017, Gesitech Solutions Africa delivers world-class
+            LPG accessories, plant installations, and maintenance services that
+            drive growth, protect communities, and support a cleaner energy
+            future.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6 lg:mt-8 w-full">
             <Link href="#what-we-do">
@@ -30,7 +30,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
               onClick={onOpenContact}
               className="bg-white hover:bg-gesitech-blue hover:text-white transition-all duration-300 hover:-translate-y-1 border border-gesitech-blue text-gesitech-blue px-6 py-3 rounded-xl text-base lg:text-lg cursor-pointer w-full sm:w-auto"
             >
-              Get Quote
+              Discover Our Products
             </button>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4 mt-6 lg:mt-8">
@@ -58,13 +58,13 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </div>
         </div>
 
-        <div className="flex flex-row items-center justify-center lg:w-1/2 mt-8 lg:mt-0">
+        <div className="flex flex-row items-center justify-center lg:w-2/5 mt-8 lg:mt-0">
           <Image
-            src="/assets/images/header-img.png"
+            src="/assets/images/hero-img.jpg"
             alt="Gesitech Solutions Africa"
             width={1000}
             height={100}
-            className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl w-full max-w-lg"
+            className="hover:shadow-2xl transition-all duration-300 rounded-2xl w-full max-w-lg"
           />
         </div>
       </div>

@@ -25,7 +25,7 @@ export default function MissionVision() {
         <div className="flex flex-row items-center justify-between gap-10">
           <div className="flex flex-col items-start justify-center">
             <div className="flex flex-col items-center justify-start gap-4 mt-8">
-              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:skew-y-1 hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl">
+              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl">
                 <Image
                   src="/assets/images/mission.png"
                   alt="Mission"
@@ -44,7 +44,7 @@ export default function MissionVision() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:skew-y-1 hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl">
+              <div className="flex flex-row items-center justify-start gap-4 bg-white hover:shadow-2xl transition-all duration-300 px-4 py-10 rounded-xl">
                 <Image
                   src="/assets/images/vision.png"
                   alt="Vision"
@@ -71,7 +71,7 @@ export default function MissionVision() {
               alt="Mission and Vision"
               width={700}
               height={0}
-              className="hover:skew-y-1 hover:shadow-2xl transition-all duration-300 rounded-2xl"
+              className="hover:shadow-2xl transition-all duration-300 rounded-2xl"
             />
           </div>
         </div>

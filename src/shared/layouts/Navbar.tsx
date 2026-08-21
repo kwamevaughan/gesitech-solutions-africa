@@ -10,9 +10,9 @@ import ContactModal from "@/shared/components/ContactModal";
 const MENU_TRANSITION_MS = 400;
 
 // Smooth-scrolls to an in-page anchor target, offsetting for the fixed
-// header's height (only relevant once the pill has shrunk in — the
-// full-width state sits above the content and needs no offset).
-function scrollToAnchor(href: string, isScrolled: boolean) {
+// header's height (the header floats over the page at every scroll
+// position now, so the offset always applies).
+function scrollToAnchor(href: string) {
   const targetId = href.replace("#", "");
   const element = document.getElementById(targetId);
   if (!element) return;
@@ -21,7 +21,7 @@ function scrollToAnchor(href: string, isScrolled: boolean) {
     const header = document.querySelector("header");
     const headerHeight = header ? header.offsetHeight : 0;
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-    const offset = isScrolled ? headerHeight + 20 : 0;
+    const offset = headerHeight + 20;
     window.scrollTo({
       top: elementPosition - offset,
       behavior: "smooth",
@@ -75,7 +75,7 @@ function MobileMenu({
 
   const handleLinkClick = (e: MouseEvent, href: string) => {
     e.preventDefault();
-    scrollToAnchor(href, isScrolled);
+    scrollToAnchor(href);
     onNavigate();
   };
 
@@ -243,7 +243,7 @@ export default function Navbar() {
 
   const handleLinkClick = (e: MouseEvent, href: string) => {
     e.preventDefault();
-    scrollToAnchor(href, isScrolled);
+    scrollToAnchor(href);
   };
 
   const openContact = () => setIsContactOpen(true);
@@ -274,11 +274,7 @@ export default function Navbar() {
         transition:
           "top 500ms cubic-bezier(0.22, 1, 0.36, 1), margin 500ms cubic-bezier(0.22, 1, 0.36, 1), border-radius 500ms cubic-bezier(0.22, 1, 0.36, 1), transform 550ms cubic-bezier(0.65, 0, 0.35, 1)",
       }}
-      className={`sticky z-60 isolate overflow-hidden ${
-        isScrolled
-          ? "top-4 mx-6 rounded-4xl lg:mx-24"
-          : "top-0 mx-0 w-full rounded-none"
-      }`}
+      className="fixed inset-x-0 top-4 z-60 isolate mx-6 overflow-hidden rounded-4xl lg:mx-24"
     >
       {/* "Liquid glass": a distorted+blurred backdrop layer, a faint
           white tint, and an inset specular highlight — stacked in that
@@ -289,26 +285,20 @@ export default function Navbar() {
       <div
         aria-hidden
         style={{
-          filter: isScrolled ? "url(#glass-distortion)" : undefined,
+          filter: "url(#glass-distortion)",
           transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
         }}
-        className={`pointer-events-none absolute inset-0 rounded-[inherit] backdrop-blur-[3px] transition-opacity duration-500 ${
-          isScrolled ? "opacity-100" : "opacity-0"
-        }`}
+        className="pointer-events-none absolute inset-0 rounded-[inherit] backdrop-blur-[3px] opacity-100 transition-opacity duration-500"
       />
       <div
         aria-hidden
         style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
-        className={`pointer-events-none absolute inset-0 rounded-[inherit] bg-white/60 transition-opacity duration-500 ${
-          isScrolled ? "opacity-100" : "opacity-0"
-        }`}
+        className="pointer-events-none absolute inset-0 rounded-[inherit] bg-white/60 opacity-100 transition-opacity duration-500"
       />
       <div
         aria-hidden
         style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
-        className={`pointer-events-none absolute inset-0 rounded-[inherit] shadow-lg shadow-gesitech-blue/10 ring-1 ring-white/40 ring-inset transition-opacity duration-500 ${
-          isScrolled ? "opacity-100" : "opacity-0"
-        }`}
+        className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-lg shadow-gesitech-blue/10 ring-1 ring-white/40 ring-inset opacity-100 transition-opacity duration-500"
       />
 
       <nav
@@ -317,7 +307,7 @@ export default function Navbar() {
           isScrolled ? "h-20 px-6 lg:px-8" : "h-24 px-4 sm:px-[5vw] lg:px-32"
         }`}
       >
-        <a href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="relative block h-12 w-36 shrink-0">
+        <a href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="relative block h-16 w-44 shrink-0">
           <Image
             src="/assets/images/logo.png"
             alt="Gesitech Solutions Africa"

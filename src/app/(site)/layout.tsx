@@ -18,9 +18,9 @@ export default function SiteLayout({
         <AnalyticsPageview />
       </Suspense>
 
-      <div className="min-h-screen relative overflow-hidden mx-auto">
-        <Navbar />
+      <Navbar />
 
+      <div className="min-h-screen relative overflow-hidden mx-auto">
         <ScrollToTop />
 
         <div className="relative z-10 flex flex-col min-h-screen">
