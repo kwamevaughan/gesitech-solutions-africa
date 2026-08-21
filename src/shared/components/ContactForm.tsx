@@ -1,7 +1,6 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import dynamic from "next/dynamic";
 import Select, {
   type StylesConfig,
   type SingleValue,
@@ -9,11 +8,6 @@ import Select, {
 } from "react-select";
 import type { Dispatch, FormEvent, SetStateAction } from "react";
 import type { ContactFormPayload } from "@/shared/types/contact";
-
-// Dynamically import ReCAPTCHA with SSR disabled
-const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {
-  ssr: false, // This ensures the component only loads on the client
-});
 
 interface SelectOption {
   value: string;
@@ -30,7 +24,6 @@ interface ContactFormProps {
   loading: boolean;
   isCustomBudget: boolean;
   setIsCustomBudget: Dispatch<SetStateAction<boolean>>;
-  handleRecaptcha: (token: string | null) => void;
 }
 
 export default function ContactForm({
@@ -41,7 +34,6 @@ export default function ContactForm({
   loading,
   isCustomBudget,
   setIsCustomBudget,
-  handleRecaptcha,
 }: ContactFormProps) {
   // Options for React Select dropdowns
   const industryOptions: SelectOption[] = [
@@ -447,15 +439,29 @@ export default function ContactForm({
         </div>
       </div>
 
-      {/* reCAPTCHA and Submit */}
+      {/* Submit */}
       <div className="space-y-6 pt-6 border-t border-gray-200">
-        <div className="flex justify-center">
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-            onChange={handleRecaptcha}
-            theme="light"
-          />
-        </div>
+        <p className="text-xs text-gray-400 text-center">
+          This site is protected by reCAPTCHA and the Google{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-600"
+          >
+            Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-600"
+          >
+            Terms of Service
+          </a>{" "}
+          apply.
+        </p>
 
         {error && (
           <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-red-700 text-center">

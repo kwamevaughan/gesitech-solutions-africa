@@ -1,15 +1,11 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import dynamic from "next/dynamic";
 import toast from "react-hot-toast";
 import { Icon } from "@iconify/react";
 import SimpleModal from "./SimpleModal";
 import { emptyProductEnquiryFormData } from "@/shared/types/productEnquiry";
-
-const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {
-  ssr: false,
-});
+import { executeRecaptchaV3 } from "@/shared/lib/recaptcha";
 
 interface ProductEnquiryModalProps {
   isOpen: boolean;
@@ -23,7 +19,6 @@ export default function ProductEnquiryModal({
   productName,
 }: ProductEnquiryModalProps) {
   const [formData, setFormData] = useState(emptyProductEnquiryFormData);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -51,15 +46,18 @@ export default function ProductEnquiryModal({
     setError("");
     setLoading(true);
 
-    if (!recaptchaToken) {
-      setError("Please complete the reCAPTCHA");
-      setLoading(false);
-      return;
-    }
-
     const toastId = toast.loading("Sending your enquiry...");
 
     try {
+      const recaptchaToken = await executeRecaptchaV3("product_enquiry");
+
+      if (!recaptchaToken) {
+        toast.error("reCAPTCHA verification failed", { id: toastId });
+        setError("reCAPTCHA verification failed. Please try again.");
+        setLoading(false);
+        return;
+      }
+
       const response = await fetch("/api/product-enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -71,7 +69,6 @@ export default function ProductEnquiryModal({
       if (response.ok) {
         toast.success("Enquiry sent successfully!", { id: toastId });
         setFormData(emptyProductEnquiryFormData);
-        setRecaptchaToken(null);
         setTimeout(() => {
           onClose();
         }, 1500);
@@ -94,9 +91,26 @@ export default function ProductEnquiryModal({
       isOpen={isOpen}
       onClose={onClose}
       title={productName ? `Enquire About ${productName}` : "Enquire About Our Products"}
-      width="max-w-lg"
+      width="max-w-3xl"
     >
       <form onSubmit={handleSubmit} className="space-y-5">
+        {productName && (
+          <div className="space-y-2">
+            <label htmlFor="product" className="block text-sm font-semibold text-gray-700">
+              Product
+            </label>
+            <input
+              type="text"
+              id="product"
+              name="product"
+              value={formData.product}
+              readOnly
+              disabled
+              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 bg-gray-100 text-gray-600 cursor-not-allowed"
+            />
+          </div>
+        )}
+
         <div className="space-y-2">
           <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
             Full Name *
@@ -177,13 +191,27 @@ export default function ProductEnquiryModal({
           />
         </div>
 
-        <div className="flex justify-center">
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-            onChange={setRecaptchaToken}
-            theme="light"
-          />
-        </div>
+        <p className="text-xs text-gray-400 text-center">
+          This site is protected by reCAPTCHA and the Google{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-600"
+          >
+            Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-600"
+          >
+            Terms of Service
+          </a>{" "}
+          apply.
+        </p>
 
         {error && (
           <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-red-700 text-center text-sm">

@@ -6,6 +6,7 @@ import ContactForm from "./ContactForm";
 import SimpleModal from "./SimpleModal";
 import * as gtag from "@/shared/lib/gtag";
 import { emptyContactFormData } from "@/shared/types/contact";
+import { executeRecaptchaV3 } from "@/shared/lib/recaptcha";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -14,29 +15,27 @@ interface ContactModalProps {
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [formData, setFormData] = useState(emptyContactFormData);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [isCustomBudget, setIsCustomBudget] = useState(false);
-
-  const handleRecaptcha = (token: string | null) => {
-    setRecaptchaToken(token);
-  };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setLoading(true);
 
-    if (!recaptchaToken) {
-      setError("Please complete the reCAPTCHA");
-      setLoading(false);
-      return;
-    }
-
     const toastId = toast.loading("Sending your request...");
 
     try {
+      const recaptchaToken = await executeRecaptchaV3("contact_form");
+
+      if (!recaptchaToken) {
+        toast.error("reCAPTCHA verification failed", { id: toastId });
+        setError("reCAPTCHA verification failed. Please try again.");
+        setLoading(false);
+        return;
+      }
+
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -55,8 +54,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
         // Reset form
         setFormData(emptyContactFormData);
-
-        setRecaptchaToken(null);
         setIsCustomBudget(false);
 
         // Delay a bit before closing the modal
@@ -92,7 +89,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         loading={loading}
         isCustomBudget={isCustomBudget}
         setIsCustomBudget={setIsCustomBudget}
-        handleRecaptcha={handleRecaptcha}
       />
     </SimpleModal>
   );

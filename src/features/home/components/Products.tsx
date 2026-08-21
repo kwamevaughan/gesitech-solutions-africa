@@ -100,7 +100,7 @@ export default function Products() {
   };
 
   return (
-    <section id="products" className="bg-white pt-20 pb-20">
+    <section id="products" className="bg-gesitech-green/10 pt-20 pb-20">
       <div className="flex flex-col items-center justify-between gap-4 container-fluid px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-start gap-2 mb-6">
           <div className="flex flex-row items-center justify-start gap-4">
@@ -160,10 +160,10 @@ export default function Products() {
                 type="button"
                 onClick={handlePrev}
                 disabled={page === 0}
-                className={`hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 rounded-full bg-white shadow-lg items-center justify-center transition-all ${
+                className={`hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 rounded-full bg-white border border-gesitech-blue shadow-lg items-center justify-center transition-all ${
                   page === 0
                     ? "opacity-50 cursor-not-allowed"
-                    : "cursor-pointer hover:bg-gesitech-green hover:text-white"
+                    : "cursor-pointer hover:bg-gesitech-blue hover:text-white"
                 }`}
               >
                 <Icon icon="lucide:chevron-left" width="24" height="24" />
@@ -172,10 +172,10 @@ export default function Products() {
                 type="button"
                 onClick={handleNext}
                 disabled={page >= pageCount - 1}
-                className={`hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full bg-white shadow-lg items-center justify-center transition-all ${
+                className={`hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full bg-white border border-gesitech-blue shadow-lg items-center justify-center transition-all ${
                   page >= pageCount - 1
                     ? "opacity-50 cursor-not-allowed"
-                    : "cursor-pointer hover:bg-gesitech-green hover:text-white"
+                    : "cursor-pointer hover:bg-gesitech-blue hover:text-white"
                 }`}
               >
                 <Icon icon="lucide:chevron-right" width="24" height="24" />

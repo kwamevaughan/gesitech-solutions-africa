@@ -31,7 +31,7 @@ const SimpleModal = ({
 }: SimpleModalProps) => {
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [shouldRender, setShouldRender] = useState(false);
+  const [shouldRender, setShouldRender] = useState(isOpen);
   const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
 
   // Opening needs shouldRender true immediately (so the enter transition
