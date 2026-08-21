@@ -8,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenContact }: HeroProps) {
   return (
-    <section id="home" className="bg-gesitech-blue/10 -mt-28 pt-46 pb-18 px-4">
+    <section id="home" className="bg-gesitech-blue/10 pt-46 pb-18 px-4">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-10 container-fluid">
         <div className="flex flex-col items-start justify-center lg:w-3/5">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gesitech-blue mb-6 lg:mb-8 text-center lg:text-left">

@@ -5,12 +5,13 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { href: "#home", label: "Home", isAnchor: true },
   { href: "#about", label: "About", isAnchor: true },
-  { href: "#mission", label: "Mission", isAnchor: true },
-  { href: "#what-we-do", label: "What We Do", isAnchor: true },
-  { href: "#growth-story", label: "Growth Story", isAnchor: true },
-  { href: "#team", label: "Team", isAnchor: true },
+  { href: "#services", label: "Services", isAnchor: true },
+  { href: "#products", label: "Products", isAnchor: true },
+  { href: "#ecosystem", label: "Ecosystem", isAnchor: true },
+  { href: "#platform", label: "Platform", isAnchor: true },
+  { href: "#journey", label: "Journey", isAnchor: true },
+  { href: "#leadership", label: "Leadership", isAnchor: true },
   { href: "#certifications", label: "Certifications", isAnchor: true },
   { href: "#partners", label: "Partners", isAnchor: true },
 ];

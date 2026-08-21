@@ -303,8 +303,8 @@ export default function Navbar() {
 
       <nav
         style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
-        className={`relative mx-auto flex w-full items-center justify-between transition-[height,padding] duration-500 ${
-          isScrolled ? "h-20 px-6 lg:px-8" : "h-24 px-4 sm:px-[5vw] lg:px-32"
+        className={`relative mx-auto grid w-full grid-cols-[auto_1fr_auto] items-center px-3 transition-[height] duration-500 lg:px-5 ${
+          isScrolled ? "h-20" : "h-24"
         }`}
       >
         <a href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="relative block h-16 w-44 shrink-0">
@@ -320,7 +320,7 @@ export default function Navbar() {
         <div
           ref={navLinksRef}
           onMouseLeave={() => setHoverRect(null)}
-          className="relative ml-auto hidden items-center gap-1 lg:flex"
+          className="relative mx-auto hidden items-center justify-center lg:flex"
         >
           {/* One persistent highlight, measured off whichever link is
               hovered and animated via `animate` (not layoutId): a
@@ -360,39 +360,41 @@ export default function Navbar() {
                 setHoverRect(rect);
                 setLastHoverRect(rect);
               }}
-              className="relative z-10 inline-flex h-10 items-center rounded-full px-5 text-md font-medium text-gesitech-blue whitespace-nowrap transition-colors hover:text-gesitech-green"
+              className="relative z-10 inline-flex h-10 items-center rounded-full px-3 text-md font-medium text-gesitech-blue whitespace-nowrap transition-colors hover:text-gesitech-green"
             >
               {link.label}
             </a>
           ))}
+        </div>
 
+        <div className="flex items-center justify-self-end">
           <button
             type="button"
             onClick={openContact}
-            className="ml-2 inline-flex h-10 items-center rounded-full bg-gradient-to-r from-gesitech-blue to-gesitech-green px-6 text-md font-semibold text-white whitespace-nowrap shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer"
+            className="hidden h-10 items-center rounded-full bg-gradient-to-r from-gesitech-blue to-gesitech-green px-6 text-md font-semibold text-white whitespace-nowrap shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer lg:inline-flex"
           >
             Get Quote
           </button>
-        </div>
 
-        <button
-          type="button"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((open) => !open)}
-          className="relative flex h-10 w-10 items-center justify-center rounded-full text-gesitech-blue lg:hidden"
-        >
-          <span
-            key={isOpen ? "close" : "open"}
-            className="absolute inset-0 flex items-center justify-center"
+          <button
+            type="button"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((open) => !open)}
+            className="relative flex h-10 w-10 items-center justify-center rounded-full text-gesitech-blue lg:hidden"
           >
-            <Icon
-              icon={isOpen ? "ci:close-big" : "ci:menu-alt-02"}
-              width={32}
-              height={32}
-            />
-          </span>
-        </button>
+            <span
+              key={isOpen ? "close" : "open"}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <Icon
+                icon={isOpen ? "ci:close-big" : "ci:menu-alt-02"}
+                width={32}
+                height={32}
+              />
+            </span>
+          </button>
+        </div>
       </nav>
     </header>
 
