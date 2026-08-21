@@ -15,7 +15,12 @@ const MENU_TRANSITION_MS = 400;
 function scrollToAnchor(href: string) {
   const targetId = href.replace("#", "");
   const element = document.getElementById(targetId);
-  if (!element) return;
+  if (!element) {
+    // Section doesn't exist on this page (e.g. clicking a nav link from
+    // /legal) — navigate to the homepage instead of silently doing nothing.
+    window.location.href = `/${href}`;
+    return;
+  }
 
   setTimeout(() => {
     const header = document.querySelector("header");
@@ -358,7 +363,7 @@ export default function Navbar() {
                 setHoverRect(rect);
                 setLastHoverRect(rect);
               }}
-              className="relative z-10 inline-flex h-10 items-center rounded-full px-2 text-sm font-medium text-gesitech-blue whitespace-nowrap transition-colors hover:text-gesitech-green xl:px-2.5 2xl:px-3 2xl:text-md"
+              className="relative z-10 inline-flex h-10 items-center rounded-full px-1.5 text-[15px] font-medium text-gesitech-blue whitespace-nowrap transition-colors hover:text-gesitech-green xl:px-2.5 2xl:px-3 2xl:text-md"
             >
               {link.label}
             </a>
